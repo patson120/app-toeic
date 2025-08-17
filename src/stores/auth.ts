@@ -1,6 +1,6 @@
 import { defineStore } from 'pinia'
 import { ref, computed } from 'vue'
-import { decodeCredential, type CredentialResponse } from 'vue3-google-login'
+import { decodeCredential,  } from 'vue3-google-login'
 import { useOnboardingStore } from './onboarding'
 
 interface User {
@@ -79,12 +79,12 @@ export const useAuthStore = defineStore('auth', () => {
     }
   }
 
-  const loginWithGoogle = async (response: CredentialResponse) => {
+  const loginWithGoogle = async (response: any) => {
     isLoading.value = true
     try {
-      const userData = decodeCredential(response.credential)
+      const userData: any = decodeCredential(response.credential)
       
-      const user = {
+      const user: any = {
         id: userData.sub,
         email: userData.email,
         name: userData.name,

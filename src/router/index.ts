@@ -34,6 +34,7 @@ const router = createRouter({
 // Protection des routes
 router.beforeEach((to, from, next) => {
   const authStore = useAuthStore()
+  console.log(to, from, authStore);
   
   //if (to.meta.requiresAuth && !authStore.isAuthenticated) {
   //  next('/login')

@@ -31,7 +31,6 @@
 <script setup lang="ts">
 import { ref } from 'vue'
 import { useRouter } from 'vue-router'
-import { GoogleLogin, type CredentialResponse } from 'vue3-google-login'
 import { useAuthStore } from '../stores/auth'
 import LoadingSpinner from './LoadingSpinner.vue'
 
@@ -43,7 +42,7 @@ const emit = defineEmits<{
   error: [message: string]
 }>()
 
-const handleGoogleLogin = async (response: CredentialResponse) => {
+const handleGoogleLogin = async (response: any) => {
   isLoading.value = true
   
   try {
