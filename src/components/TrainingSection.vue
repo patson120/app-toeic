@@ -25,10 +25,11 @@
                 </h1>
                 <Carousel />
             </div>
-            <div class="col-span-3 h-[520px] w-full bg-[#ebf4eb] rounded-[44px] px-10 pt-20">
-                <h1 className="font-extrabold text-black text-4xl">
+            <div class="col-span-3 h-[520px] w-full bg-[#ebf4eb] rounded-[44px] flex flex-col justify-between pt-20 pb-10">
+                <h1 className="font-extrabold text-black text-4xl px-10">
                     Tout pour vous permettre d'apprécier votre évolution.
                 </h1>
+                <Carousel />
             </div>
             <div class="col-span-2 h-[520px] w-full bg-[#fff5eb] rounded-[44px] overflow-hidden">
                 <img 
