@@ -33,7 +33,7 @@
             </div>
             <div class="col-span-2 h-[520px] w-full bg-[#fff5eb] rounded-[44px] overflow-hidden">
                 <img 
-                    class="w-full h-full object-contain"
+                    class="w-full h-full object-cover"
                     src="/assets/img/rectangle-8.png" 
                     alt="" 
                 />
