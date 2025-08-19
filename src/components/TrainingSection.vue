@@ -5,7 +5,7 @@
                 <h1 className="font-extrabold text-black text-4xl px-10">
                     TOEIC Training
                 </h1>
-                <Carousel />
+                <Carousel direction="left" />
             </div>
             <div class="col-span-2 h-[520px] w-full  bg-[#f4f0fd] rounded-[44px] pt-20 pb-10">
                 <h1 className="font-extrabold text-black text-4xl px-10">
@@ -23,13 +23,13 @@
                 <h1 className="font-extrabold text-black text-4xl px-10">
                     Des petits jeux pour apprendre encore plus vite.
                 </h1>
-                <Carousel />
+                <Carousel direction="right" /> 
             </div>
             <div class="col-span-3 h-[520px] w-full bg-[#ebf4eb] rounded-[44px] flex flex-col justify-between pt-20 pb-10">
                 <h1 className="font-extrabold text-black text-4xl px-10">
                     Tout pour vous permettre d'apprécier votre évolution.
                 </h1>
-                <Carousel />
+                <Carousel direction="left" />
             </div>
             <div class="col-span-2 h-[520px] w-full bg-[#fff5eb] rounded-[44px] overflow-hidden">
                 <img 
