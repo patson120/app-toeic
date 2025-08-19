@@ -5,15 +5,20 @@
                 <h1 className="font-extrabold text-black text-4xl px-10">
                     TOEIC Training
                 </h1>
-                <Carousel 
+                <BaseCarousel 
                     direction="left" 
-                    :itemsLength="services.length">
+                    :speed="1.2" 
+                    :item-width="220"
+                    :indicator-count="services.length"
+                    :show-indicators="false"
+                    :pause-on-hover="true"
+                    :gap="12">
                     <ItemCard
                         v-for="service in duplicatedServices" 
                         :key="`${service.id}-${Math.random()}`"
                         :service="service"
                     />
-                </Carousel>
+                </BaseCarousel>
             </div>
             <div class="col-span-2 h-[520px] w-full  bg-[#f4f0fd] rounded-[44px] pt-20 pb-10">
                 <h1 className="font-extrabold text-black text-4xl px-10">
@@ -33,49 +38,78 @@
                 </h1>
                 <!-- 
                     <div class="flex flex-col">
-                        <Carousel 
-                            direction="right" 
-                            :itemsLength="services.length">
-                            <div v-for="(service, index) in duplicatedServices" :key="index" 
-                            class="h-20 min-w-[200px] mr-3 rounded-full bg-white"></div>
-                        </Carousel>
-                        <Carousel 
+                        <BaseCarousel 
                             direction="left" 
-                            :itemsLength="services.length">
-                            <div v-for="(service, index) in duplicatedServices" :key="index" 
-                            class="h-20 min-w-[200px] mr-3 rounded-full bg-white"></div>
-                        </Carousel>
-                        <Carousel 
-                            direction="right" 
-                            :itemsLength="services.length">
-                            <div v-for="(service, index) in duplicatedServices" :key="index" 
-                            class="h-20 min-w-[200px] mr-3 rounded-full bg-white"></div>
-                        </Carousel>
+                            :speed="1.2" 
+                            :item-width="220"
+                            :indicator-count="services.length"
+                            :show-indicators="false"
+                            :pause-on-hover="true"
+                            :gap="12">
+                            <div v-for="(_, index) in duplicatedServices" :key="index" 
+                                class="h-20 min-w-[200px] mr-3 rounded-full bg-white">
+                            </div>
+                        </BaseCarousel>
+                        <BaseCarousel 
+                            direction="left" 
+                            :speed="1.2" 
+                            :item-width="220"
+                            :indicator-count="services.length"
+                            :show-indicators="false"
+                            :pause-on-hover="true"
+                            :gap="12">
+                            <div v-for="(_, index) in duplicatedServices" :key="index" 
+                                class="h-20 min-w-[200px] mr-3 rounded-full bg-white">
+                            </div>
+                        </BaseCarousel>
+                        <BaseCarousel 
+                            direction="left" 
+                            :speed="1.2" 
+                            :item-width="220"
+                            :indicator-count="services.length"
+                            :show-indicators="false"
+                            :pause-on-hover="true"
+                            :gap="12">
+                            <div v-for="(_, index) in duplicatedServices" :key="index" 
+                                class="h-20 min-w-[200px] mr-3 rounded-full bg-white">
+                            </div>
+                        </BaseCarousel>
                     </div>
+            
                 -->
-                <Carousel 
+                <BaseCarousel 
                     direction="right" 
-                    :itemsLength="services.length">
+                    :speed="1.2" 
+                    :item-width="220"
+                    :indicator-count="services.length"
+                    :show-indicators="false"
+                    :pause-on-hover="true"
+                    :gap="12">
                     <ItemCard
                         v-for="service in duplicatedServices" 
                         :key="`${service.id}-${Math.random()}`"
                         :service="service"
                     />
-                </Carousel>
+                </BaseCarousel>
             </div>
             <div class="col-span-3 h-[520px] w-full bg-[#ebf4eb] rounded-[44px] flex flex-col justify-between pt-20 pb-10">
                 <h1 className="font-extrabold text-black text-4xl px-10">
                     Tout pour vous permettre d'apprécier votre évolution.
                 </h1>
-                <Carousel 
+                <BaseCarousel 
                     direction="left" 
-                    :itemsLength="services.length">
+                    :speed="1.2" 
+                    :item-width="220"
+                    :indicator-count="services.length"
+                    :show-indicators="false"
+                    :pause-on-hover="true"
+                    :gap="12">
                     <ItemCard
                         v-for="service in duplicatedServices" 
                         :key="`${service.id}-${Math.random()}`"
                         :service="service"
                     />
-                </Carousel>
+                </BaseCarousel>
             </div>
             <div class="col-span-2 h-[520px] w-full bg-[#fff5eb] rounded-[44px] overflow-hidden">
                 <img 
@@ -90,8 +124,8 @@
 
 <script setup lang="ts">
     import { computed, ref, Ref } from 'vue';
-    import Carousel from './sliders/Carousel.vue';
     import { Service } from '../types';
+    import BaseCarousel from './sliders/BaseCarousel.vue';
     import ItemCard from './sliders/ItemCard.vue';
 
     const services: Ref<Service[]> = ref([
