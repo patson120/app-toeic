@@ -50,7 +50,7 @@
       'button-loading': props.loading,
       'button-full-width': props.fullWidth,
       'button-rounded': props.rounded,
-      'button-icon-only': props.icon && !props.$slots?.default
+      'button-icon-only': props.icon // && !props.$slots?.default
     }
   ]);
   
