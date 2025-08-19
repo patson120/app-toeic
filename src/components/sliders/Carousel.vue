@@ -3,11 +3,7 @@
         <div class="container">
             <div class="carousel-container" ref="carouselContainer">
                 <div class="carousel-track" ref="carouselTrack" :style="{ transform: `translateX(${translateX}px)` }">
-                    <ItemCard 
-                        v-for="service in duplicatedServices" 
-                        :key="`${service.id}-${Math.random()}`"
-                        :service="service"
-                    />
+                    <slot></slot>
                 </div>
             </div>
         </div>
@@ -15,93 +11,31 @@
   </template>
   
 <script setup lang="ts">
-    import { ref, onMounted, onUnmounted, computed } from 'vue';
-    import ItemCard from './ItemCard.vue';
+    import { onMounted, onUnmounted, ref } from 'vue';
 
     const props = defineProps<{
         direction: "right" | "left";
+        itemsLength: number;
+        itemWidth?: number;
     }>();
-
-    interface Service {
-        id: number;
-        title: string;
-        description: string;
-        icon: string;
-        features: string[];
-        price: string;
-    }
-    
-    const services: Service[] = [
-        {
-            id: 1,
-            title: "Développement Web",
-            description: "Création de sites web modernes et responsive avec les dernières technologies.",
-            icon: "fas fa-code",
-            features: ["React/Vue", "Node.js", "Responsive", "SEO"],
-            price: "À partir de 1 500€"
-        },
-        {
-            id: 2,
-            title: "Design UI/UX",
-            description: "Conception d'interfaces utilisateur intuitives et d'expériences mémorables.",
-            icon: "fas fa-paint-brush",
-            features: ["Figma", "Prototyping", "User Research", "Mobile First"],
-            price: "À partir de 800€"
-        },
-        {
-            id: 3,
-            title: "Mobile App",
-            description: "Applications mobiles natives et cross-platform pour iOS et Android.",
-            icon: "fas fa-mobile-alt",
-            features: ["React Native", "Flutter", "iOS", "Android"],
-            price: "À partir de 3 000€"
-        },
-        {
-            id: 4,
-            title: "E-commerce",
-            description: "Solutions complètes pour votre boutique en ligne avec paiements sécurisés.",
-            icon: "fas fa-shopping-cart",
-            features: ["Shopify", "WooCommerce", "Stripe", "PayPal"],
-            price: "À partir de 2 500€"
-        },
-        {
-            id: 5,
-            title: "SEO & Marketing",
-            description: "Optimisation pour les moteurs de recherche et stratégies marketing digitales.",
-            icon: "fas fa-chart-line",
-            features: ["Google Analytics", "Keywords", "Content", "Social Media"],
-            price: "À partir de 600€"
-        },
-        {
-            id: 6,
-            title: "Maintenance",
-            description: "Support technique et maintenance continue de vos projets digitaux.",
-            icon: "fas fa-cogs",
-            features: ["24/7 Support", "Updates", "Backup", "Security"],
-            price: "À partir de 200€/mois"
-        }
-    ];
   
     const carouselContainer = ref<HTMLElement>();
     const carouselTrack = ref<HTMLElement>();
     const translateX = ref(0);
     const currentIndex = ref(0);
-    const cardWidth = 220; // Width of card + margin
+    const cardWidth = props.itemWidth ?? 220; // Width of card + margin
     const animationId = ref<number>();
-    
-    // Duplicate services for infinite scroll effect
-    const duplicatedServices = computed(() => [ ...services, ...services, ...services ]);
-  
+
     const startAnimation = () => {
         const animate = () => {
 
         props.direction === 'left' ? translateX.value -= 1 : translateX.value += 1;
         
         // Reset position when we've scrolled through one complete set
-        const resetPosition = props.direction === 'left' ? -(services.length * cardWidth) : 0;
+        const resetPosition = props.direction === 'left' ? -(props.itemsLength * cardWidth) : 0;
     
         if (props.direction === 'right' && translateX.value >= resetPosition) {
-            translateX.value = -(services.length * cardWidth)
+            translateX.value = -(props.itemsLength * cardWidth)
         }
         else if (props.direction === 'left' && translateX.value <= resetPosition) {
             translateX.value = 0
@@ -109,7 +43,7 @@
         
         // Update current index for indicators
         const progress = Math.abs(translateX.value) / cardWidth;
-        currentIndex.value = Math.floor(progress % services.length);
+        currentIndex.value = Math.floor(progress % props.itemsLength);
         
         animationId.value = requestAnimationFrame(animate);
         };
@@ -136,9 +70,7 @@
     
     onUnmounted(() => {
         stopAnimation();
-    });
-
-    
+    })
 </script>
   
 <style scoped>
