@@ -20,7 +20,7 @@
       <div className="flex md:grid md:grid-cols-3 gap-6 overflow-x-scroll overflow-y-hidden pb-3">
         <div v-for="(card, index) in approachCards" :key="index"
             :class="[ card.id === 3 ? 'rounded-[44px]' : '',  card.backgroundClass]"
-            class="flex-1 h-[354px] min-w-[354px] rounded-[34px] border-0">
+            class="flex-1 md:h-[354px] min-w-[320px] rounded-[34px] border-0">
             <div className="p-0 h-full relative">
               <div :class="card.iconBackgroundClass"
                 class="w-[103px] h-[100px] mt-5 ml-[21px] rounded-3xl flex justify-center items-center">
@@ -32,11 +32,11 @@
                 <div v-else className="w-14 h-[54px] bg-[#c4c4c4]"></div>
               </div>
 
-              <div className="flex flex-col gap-4 mt-[85px] ml-[21px] mr-[21px]">
-                <h3 className="w-full font-bold text-[#202020] text-xl">
+              <div className="flex flex-col gap-4 mt-10 md:mt-[85px] mx-5">
+                <h3 className="font-bold text-[#202020] text-xl">
                   {{card.title}}
                 </h3>
-                <p className="w-full text-black text-base">
+                <p className="text-black">
                   {{card.description}}
                 </p>
               </div>
