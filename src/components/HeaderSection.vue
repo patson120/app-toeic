@@ -12,15 +12,15 @@
         <nav className="flex items-center gap-6">
           <div v-for="(item, index) in navigationItems" :key="index" class="">
             <span v-if="item.isActive"
-              className="px-4 py-3 bg-[#fff5eb] text-black rounded-[28px] [font-family:'Inter',Helvetica] font-semibold text-sm hover:bg-[#fff5eb]">
+              className="px-4 py-3 bg-[#fff5eb] text-black rounded-[28px] font-semibold text-sm hover:bg-[#fff5eb] whitespace-nowrap">
               {{ item.label }}
           </span>
-            <span v-else className="[font-family:'Inter',Helvetica] font-normal text-black text-sm cursor-pointer hover:text-gray-600">
+            <span v-else className=" text-black text-sm cursor-pointer hover:text-gray-600 whitespace-nowrap">
               {{ item.label }}
             </span>
           </div>
         </nav>
-        <button className="bg-[#ff551c] hover:bg-[#e64a19] text-white px-7 py-3 rounded-xl [font-family:'Manrope',Helvetica] font-extrabold text-sm h-auto">
+        <button className="bg-[#ff551c] hover:bg-[#e64a19] text-white whitespace-nowrap px-7 py-3 rounded-xl font-bold text-sm h-auto">
           Commencer l&apos;essai
         </button>
       </div>

@@ -17,7 +17,7 @@
           </div>
         </div>
       </div>
-      <div className="flex flex-row overflow-x-scroll lg:overflow-x-hidden xl:grid-cols-4 gap-4 pb-6 [&::-webkit-scrollbar]:h-0">
+      <div className="flex flex-row overflow-x-scroll lg:overflow-x-hidden xl:grid-cols-4 gap-6 pb-6 [&::-webkit-scrollbar]:h-0">
         <div v-for="(card, index) in approachCards" :key="index"
             :class="[ card.id === 3 ? 'rounded-[44px]' : '', card.backgroundClass]"
             class="flex-1 shrink-0 xl:h-[354px] min-w-[320px] xl:w-full rounded-[34px] pb-5 xl:pb-0 border-0">
