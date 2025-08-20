@@ -1,14 +1,14 @@
 <template>
     <section class="bg-white pt-10">
-        <div className="w-full relative max-width py-20 grid grid-cols-2 ">
+        <div className="w-full relative max-width py-20 grid grid-cols-1 md:grid-cols-2 ">
             <div className="gap-10 relative inline-flex flex-col items-start">
                 <div className="inline-flex flex-col items-start gap-2 relative flex-[0_0_auto]">
                 <div className="inline-flex flex-col items-start gap-6 relative flex-[0_0_auto]">
-                    <h1 className="relative mt-[-1.00px] font-extrabold text-black text-6xl tracking-[0] leading-[56px]">
+                    <h1 className="relative mt-[-1.00px] font-extrabold text-black text-4xl md:text-6xl leading-[29px] md:leading-[56px]">
                         Maîtrisez l&apos;anglais. Boostez votre carrière.
                     </h1>
 
-                    <p className="relative w-[486px] [font-family:'Poppins',Helvetica] font-normal text-black text-base tracking-[0] leading-[normal]">
+                    <p className="md:w-[486px] text-black">
                         Entraînements TOEIC intensifs, simulations d&apos;entretien RH et
                         coaching IA pour passer l&apos;examen et réussir vos entretiens
                         professionnels.
@@ -16,14 +16,14 @@
                 </div>
                 </div>
 
-                <div className="relative w-[461px] h-[50px]">
+                <div className="relative md:w-[461px] h-[50px]">
                     <div className="absolute w-[242px] h-[50px] top-0 left-0">
                         <button className="w-60 h-[50px] bg-[#ff551c] hover:bg-[#e64a19] rounded-xl [font-family:'Poppins',Helvetica] font-semibold text-white text-base tracking-[0] leading-[normal]">
                         Commencer l&apos;essai
                         </button>
                     </div>
 
-                    <div className="absolute w-[191px] h-[50px] top-0 left-[272px]">
+                    <div className="hidden md:flex absolute w-[191px] h-[50px] top-0 left-[272px]">
                         <button
                             className="relative w-[189px] h-[50px] bg-white rounded-xl border-[3px] border-solid border-[#1a4fcf] hover:bg-gray-50 [font-family:'Poppins',Helvetica] font-semibold text-[#1a4fcf] text-base text-center tracking-[0] leading-[normal]">
                             Voir la démo
@@ -56,7 +56,7 @@
                 </div>
             </div>
             <div className="h-full flex justify-end items-center">
-                <div className="w-2/3">
+                <div className="md:w-2/3">
                     <img
                         className="w-full h-full object-cover -mt-[90px]"
                         alt="Hero English For Real"
