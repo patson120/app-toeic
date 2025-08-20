@@ -1,7 +1,7 @@
 <template>
     <section class="bg-[#F9F8F8]">
         <div class="max-width py-20 grid grid-cols-7 gap-8">
-            <div class="col-span-2 flex flex-col gap-6">
+            <div class="col-span-full md:col-span-2 flex flex-col gap-6">
                 <img
                     class="w-full h-full object-cover" 
                     src="/assets/img/groupe-1.png" 
@@ -9,7 +9,7 @@
                 />
                 <div class="bg-gray-200 h-32 rounded-[32px]"></div>
             </div>
-            <div class="col-span-3 bg-white rounded-[44px]">
+            <div class="col-span-full md:col-span-3 bg-white rounded-[44px]">
                 <div className="p-10 h-full flex flex-col">
                     <div className="flex flex-col gap-4 mb-8">
                         <h2 className="w-full [font-family:'Manrope',Helvetica] font-extrabold text-black text-[34px] tracking-[0] leading-[normal]">
@@ -50,15 +50,13 @@
                     </div>
                 </div>
             </div>
-            <div class="col-span-2 flex flex-col gap-6">
+            <div class="col-span-full md:col-span-2 flex flex-col gap-6">
                 <img
                     class="w-full h-[320px] rounded-[44px] object-cover" 
                     src="/assets/img/groupe-2.png" 
                     alt=""
                 />
-                <div class="bg-white h-[280px] rounded-[32px]">
-
-                </div>
+                <div class="bg-white h-[280px] rounded-[32px]"></div>
             </div>
         </div>
     </section>
