@@ -1,11 +1,11 @@
 <template>
   <div class="bg-white">
     <section className="w-full py-20 max-width ">
-      <div className="hidden md:flex mb-5 justify-between gap-6">
-        <h1 className="w-1/2 font-bold text-black text-4xl">
+      <div className="flex mb-5 justify-between gap-6">
+        <h1 className="md:w-1/2 font-bold text-black text-2xl md:text-4xl">
           Une approche d'étude simple pour progresser facilement
         </h1>
-        <div className="text-black flex justify-end items-center gap-3">
+        <div className="hidden md:flex justify-end items-center text-black gap-3">
           <div className="px-7 py-3 rounded-xl border border-black font-bold text-sm">
             Suivez-nous sur nos réseaux
           </div>
