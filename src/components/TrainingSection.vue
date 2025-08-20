@@ -1,8 +1,8 @@
 <template>
     <section class="bg-white py-20">
         <div class="max-width grid grid-cols-5 gap-12 h-full">
-            <div class="col-span-3 h-[520px] w-full bg-[#ebf4eb] rounded-[44px] flex flex-col justify-between pt-20 pb-10">
-                <h1 className="font-extrabold text-black text-4xl px-10">
+            <div class="col-span-full md:col-span-3 md:h-[520px] w-full bg-[#ebf4eb] rounded-3xl md:rounded-[44px] flex flex-col justify-between gap-8 md:gap-0 pt-6 md:pt-20 pb-6 md:pb-10">
+                <h1 className="font-bold md:font-extrabold text-black text-3xl md:text-4xl px-5 md:px-10">
                     TOEIC Training
                 </h1>
                 <BaseCarousel 
@@ -20,20 +20,20 @@
                     />
                 </BaseCarousel>
             </div>
-            <div class="col-span-2 h-[520px] w-full  bg-[#f4f0fd] rounded-[44px] pt-20 pb-10">
-                <h1 className="font-extrabold text-black text-4xl px-10">
+            <div class="col-span-full md:col-span-2 h-[520px] w-full  bg-[#f4f0fd] rounded-3xl md:rounded-[44px] pt-6 md:pt-20 pb-6 md:pb-10">
+                <h1 className="font-bold md:font-extrabold text-black text-3xl md:text-4xl px-5 md:px-10">
                     Career Boost
                 </h1>
             </div>
-            <div class="col-span-2 h-[520px] w-full bg-[#fff5eb] rounded-[44px]  overflow-hidden">
+            <div class="col-span-full md:col-span-2 h-[520px] w-full bg-[#fff5eb] rounded-3xl md:rounded-[44px]  overflow-hidden">
                 <img 
                     class="w-full h-full object-contain"
                     src="/assets/img/phone-1.png" 
                     alt="" 
                 />
             </div>
-            <div class="col-span-3 h-[520px] w-full bg-[#ebf4eb] rounded-[44px] flex flex-col justify-between pt-20 pb-10">
-                <h1 className="font-extrabold text-black text-4xl px-10">
+            <div class="col-span-full md:col-span-3 md:h-[520px] w-full bg-[#ebf4eb] rounded-3xl md:rounded-[44px] flex flex-col justify-between gap-8 md:gap-0 pt-6 md:pt-20 pb-6 md:pb-10">
+                <h1 className="font-bold md:font-extrabold text-black text-3xl md:text-4xl px-5 md:px-10">
                     Des petits jeux pour apprendre encore plus vite.
                 </h1>
                 <!-- 
@@ -92,8 +92,8 @@
                     />
                 </BaseCarousel>
             </div>
-            <div class="col-span-3 h-[520px] w-full bg-[#ebf4eb] rounded-[44px] flex flex-col justify-between pt-20 pb-10">
-                <h1 className="font-extrabold text-black text-4xl px-10">
+            <div class="col-span-full md:col-span-3 md:h-[520px] w-full bg-[#ebf4eb] rounded-3xl md:rounded-[44px] flex flex-col justify-between gap-8 md:gap-0 pt-6 md:pt-20 pb-6 md:pb-10">
+                <h1 className="font-bold md:font-extrabold text-black text-3xl md:text-4xl px-5 md:px-10">
                     Tout pour vous permettre d'apprécier votre évolution.
                 </h1>
                 <BaseCarousel 
@@ -111,7 +111,7 @@
                     />
                 </BaseCarousel>
             </div>
-            <div class="col-span-2 h-[520px] w-full bg-[#fff5eb] rounded-[44px] overflow-hidden">
+            <div class="col-span-full md:col-span-2 h-[520px] w-full bg-[#fff5eb] rounded-[44px] overflow-hidden">
                 <img 
                     class="w-full h-full object-cover"
                     src="/assets/img/rectangle-8.png" 

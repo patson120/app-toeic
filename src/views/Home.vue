@@ -6,7 +6,7 @@
 
     <ApproachSection /> 
 
-    <div class="w-auto py-20 bg-white">
+    <div class="w-auto py-10 md:py-20 bg-white">
       <img 
         class="w-full h-full object-cover"
         src="/assets/img/mask-group.png" 
