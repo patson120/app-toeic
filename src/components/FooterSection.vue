@@ -19,7 +19,7 @@
                 </div>
 
                 <div className="text-black flex justify-end items-center gap-4">
-                    <div className="px-4 rounded-xl font-bold text-sm">
+                    <div className="px-4 rounded-xl font-bold text-sm whitespace-nowrap">
                         Suivez-nous
                     </div>
                     <router-link to="/" className="border border-black text-white px-3 py-[10px] rounded-full font-extrabold text-sm h-auto">
