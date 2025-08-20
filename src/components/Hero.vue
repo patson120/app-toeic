@@ -18,9 +18,9 @@
 
                 <div className="relative w-[461px] h-[50px]">
                     <div className="absolute w-[242px] h-[50px] top-0 left-0">
-                        <Button className="w-60 h-[50px] bg-[#ff551c] hover:bg-[#e64a19] rounded-xl [font-family:'Poppins',Helvetica] font-semibold text-white text-base tracking-[0] leading-[normal]">
+                        <button className="w-60 h-[50px] bg-[#ff551c] hover:bg-[#e64a19] rounded-xl [font-family:'Poppins',Helvetica] font-semibold text-white text-base tracking-[0] leading-[normal]">
                         Commencer l&apos;essai
-                        </Button>
+                        </button>
                     </div>
 
                     <div className="absolute w-[191px] h-[50px] top-0 left-[272px]">
