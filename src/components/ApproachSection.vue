@@ -2,10 +2,10 @@
   <div class="bg-white">
     <section className="w-full py-20 max-width ">
       <div className="flex mb-5 justify-between gap-6">
-        <h1 className="md:w-1/2 font-bold text-black text-2xl md:text-4xl">
+        <h1 className="lg:w-1/2 font-bold text-black text-2xl md:text-4xl">
           Une approche d'étude simple pour progresser facilement
         </h1>
-        <div className="hidden md:flex justify-end items-center text-black gap-3">
+        <div className="hidden lg:flex justify-end items-center text-black gap-3">
           <div className="px-7 py-3 rounded-xl border border-black font-bold text-sm">
             Suivez-nous sur nos réseaux
           </div>
@@ -17,13 +17,13 @@
           </div>
         </div>
       </div>
-      <div className="flex md:grid md:grid-cols-3 gap-6 overflow-x-scroll overflow-y-hidden pb-3">
+      <div className="flex flex-row overflow-x-scroll lg:overflow-x-hidden xl:grid-cols-4 gap-4 pb-6 [&::-webkit-scrollbar]:h-0">
         <div v-for="(card, index) in approachCards" :key="index"
-            :class="[ card.id === 3 ? 'rounded-[44px]' : '',  card.backgroundClass]"
-            class="flex-1 md:h-[354px] min-w-[320px] rounded-[34px] border-0">
+            :class="[ card.id === 3 ? 'rounded-[44px]' : '', card.backgroundClass]"
+            class="flex-1 shrink-0 xl:h-[354px] min-w-[320px] xl:w-full rounded-[34px] pb-5 xl:pb-0 border-0">
             <div className="p-0 h-full relative">
               <div :class="card.iconBackgroundClass"
-                class="w-[103px] h-[100px] mt-5 ml-[21px] rounded-3xl flex justify-center items-center">
+                class="w-[103px] h-[100px] mt-5 ml-5 rounded-3xl flex justify-center items-center">
                 <img v-if="card.hasImage"
                   className="w-14 h-[54px] object-contain"
                   alt="Image"
@@ -32,7 +32,7 @@
                 <div v-else className="w-14 h-[54px] bg-[#c4c4c4]"></div>
               </div>
 
-              <div className="flex flex-col gap-4 mt-10 md:mt-[85px] mx-5">
+              <div className="flex flex-col gap-4 mt-8 md:mt-10 lg:mt-[20px] xl:mt-[85px] mx-5">
                 <h3 className="font-bold text-[#202020] text-xl">
                   {{card.title}}
                 </h3>

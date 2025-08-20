@@ -1,7 +1,7 @@
 <template>
     <header className="w-full px-6 py-4 bg-white">
       <div className="flex items-center justify-between max-width">
-        <div className="flex items-center">
+        <div className="flex items-center shrink-0">
           <img
             className="w-[70px] h-[70px] object-cover"
             alt="Logo English For Real"

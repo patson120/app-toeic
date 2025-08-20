@@ -4,7 +4,7 @@
             <div className="gap-10 relative inline-flex flex-col items-start">
                 <div className="inline-flex flex-col items-start gap-2 relative flex-[0_0_auto]">
                 <div className="inline-flex flex-col items-start gap-6 relative flex-[0_0_auto]">
-                    <h1 className="relative mt-[-1.00px] font-extrabold text-black text-4xl md:text-6xl leading-[29px] md:leading-[56px]">
+                    <h1 className="relative mt-[-1.00px] font-extrabold text-black text-4xl md:text-6xl leading-[42px] md:leading-[56px]">
                         Maîtrisez l&apos;anglais. Boostez votre carrière.
                     </h1>
 
