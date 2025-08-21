@@ -32,7 +32,7 @@
                 <div v-else className="w-14 h-[54px] bg-[#c4c4c4]"></div>
               </div>
 
-              <div className="flex flex-col gap-4 mt:mt-5 sm:mt-8 md:mt-10 lg:mt-[20px] xl:mt-[85px] mx-5">
+              <div className="flex flex-col gap-4 mt-5 sm:mt-8 md:mt-10 lg:mt-[20px] xl:mt-[85px] mx-5">
                 <h3 className="font-bold text-[#202020] text-xl">
                   {{card.title}}
                 </h3>
