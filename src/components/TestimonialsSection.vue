@@ -7,7 +7,7 @@
                     src="/assets/img/groupe-1.png" 
                     alt=""
                 />
-                <div class="bg-gray-200 h-32 rounded-[32px]"></div>
+                <div class="bg-gray-200 h-32 rounded-3xl md:rounded-[32px]"></div>
             </div>
             <div class="col-span-full md:col-span-3 bg-white rounded-3xl md:rounded-[44px]">
                 <div className="p-4 md:p-10 h-full flex flex-col">
@@ -52,11 +52,11 @@
             </div>
             <div class="col-span-full md:col-span-2 flex flex-col gap-6">
                 <img
-                    class="w-full h-[320px] rounded-[44px] object-cover" 
+                    class="w-full h-[320px] rounded-3xl md:rounded-[44px] object-cover" 
                     src="/assets/img/groupe-2.png" 
                     alt=""
                 />
-                <div class="bg-white h-[280px] rounded-[32px]"></div>
+                <div class="bg-white h-[280px] rounded-3xl md:rounded-[32px]"></div>
             </div>
         </div>
     </section>
