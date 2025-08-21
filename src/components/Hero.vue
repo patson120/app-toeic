@@ -1,6 +1,6 @@
 <template>
-    <section class="bg-white pt-5 md:pt-10">
-        <div className="w-full relative max-width py-20 grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-0">
+    <section class="bg-white pt-10">
+        <div className="w-full relative max-width md:py-20 grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-0">
             <div className="gap-10 relative inline-flex flex-col items-start">
                 <div className="inline-flex flex-col items-start gap-2 relative flex-[0_0_auto]">
                     <div className="inline-flex flex-col items-start gap-6 relative flex-[0_0_auto]">
