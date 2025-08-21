@@ -20,7 +20,7 @@
       <div className="flex flex-row overflow-x-scroll lg:overflow-x-hidden xl:grid-cols-4 gap-6 pb-6 [&::-webkit-scrollbar]:h-0">
         <div v-for="(card, index) in approachCards" :key="index"
             :class="[ card.id === 3 ? 'rounded-[44px]' : '', card.backgroundClass]"
-            class="flex-1 shrink-0 xl:h-[354px] min-w-[320px] xl:w-full rounded-[34px] pb-5 xl:pb-0 border-0">
+            class="flex-1 shrink-0 xl:h-[354px] min-w-[280px] xl:w-full rounded-[34px] pb-5 xl:pb-0 border-0">
             <div className="p-0 h-full relative">
               <div :class="card.iconBackgroundClass"
                 class="w-[103px] h-[100px] mt-5 ml-5 rounded-3xl flex justify-center items-center">
@@ -32,7 +32,7 @@
                 <div v-else className="w-14 h-[54px] bg-[#c4c4c4]"></div>
               </div>
 
-              <div className="flex flex-col gap-4 mt-8 md:mt-10 lg:mt-[20px] xl:mt-[85px] mx-5">
+              <div className="flex flex-col gap-4 mt:mt-5 sm:mt-8 md:mt-10 lg:mt-[20px] xl:mt-[85px] mx-5">
                 <h3 className="font-bold text-[#202020] text-xl">
                   {{card.title}}
                 </h3>
