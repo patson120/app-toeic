@@ -9,36 +9,36 @@
                 />
                 <div class="bg-gray-200 h-32 rounded-[32px]"></div>
             </div>
-            <div class="col-span-full md:col-span-3 bg-white rounded-[44px]">
-                <div className="p-10 h-full flex flex-col">
+            <div class="col-span-full md:col-span-3 bg-white rounded-3xl md:rounded-[44px]">
+                <div className="p-4 md:p-10 h-full flex flex-col">
                     <div className="flex flex-col gap-4 mb-8">
-                        <h2 className="w-full [font-family:'Manrope',Helvetica] font-extrabold text-black text-[34px] tracking-[0] leading-[normal]">
-                        Fonctionnalités
+                        <h2 className="w-full font-bold text-black text-2xl md:text-[34px]">
+                            Fonctionnalités
                         </h2>
-                        <p className="w-full [font-family:'Poppins',Helvetica] font-normal text-[#454545] text-base text-justify tracking-[0] leading-[normal]">
-                        Notre méthode combine l&#39;apprentissage académique du TOEIC
-                        avec la mise en pratique professionnelle.
+                        <p className="w-full text-[#454545] md:text-justify">
+                            Notre méthode combine l&#39;apprentissage académique du TOEIC
+                            avec la mise en pratique professionnelle.
                         </p>
                     </div>
 
                     <div className="flex flex-col gap-3 mb-8">
                         <div v-for="(feature, index) in featureCards" :key="index"
                             className="w-full md:h-[100px] bg-white rounded-3xl border border-solid border-neutral-200">
-                            <div className="p-5 h-full flex flex-col justify-center">
-                            <div className="flex flex-col gap-3">
-                                <h3 className="[font-family:'Manrope',Helvetica] font-bold text-[#202020] text-sm text-justify tracking-[0] leading-[normal]">
-                                {{ feature.title }}
-                                </h3>
-                                <p className="[font-family:'Poppins',Helvetica] font-normal text-[#454545] text-base text-justify tracking-[0] leading-[normal]">
-                                {{ feature.description }}
-                                </p>
+                            <div className="p-3 md:p-5 h-full flex flex-col justify-center">
+                                <div className="flex flex-col gap-3">
+                                    <h3 className="font-bold text-[#202020] text-sm md:text-justify">
+                                    {{ feature.title }}
+                                    </h3>
+                                    <p className="text-[#454545] md:text-justify">
+                                    {{ feature.description }}
+                                    </p>
+                                </div>
                             </div>
-                        </div>
                         </div>
                     </div>
 
                     <div className="text-black flex justify-center items-center gap-3">
-                        <div className="px-7 py-3 rounded-xl border border-black font-extrabold text-sm">
+                        <div className="px-3 md:px-7 py-3 rounded-xl border border-black font-bold text-sm whitespace-nowrap">
                             rejoindre le file d'attente
                         </div>
                         <div className="border border-black text-white px-3 py-[10px] rounded-full font-extrabold text-sm h-auto">
