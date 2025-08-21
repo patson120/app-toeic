@@ -1,5 +1,5 @@
 <template>
-    <header className="w-full px-6 py-4 bg-white">
+    <header className="w-full py-4 bg-white">
       <div className="flex items-center justify-between max-width">
         <div className="flex items-center shrink-0">
           <img
@@ -9,7 +9,7 @@
           />
         </div>
 
-        <nav className="flex items-center gap-6">
+        <nav className="hidden md:flex items-center gap-6">
           <div v-for="(item, index) in navigationItems" :key="index" class="">
             <span v-if="item.isActive"
               className="px-4 py-3 bg-[#fff5eb] text-black rounded-[28px] font-semibold text-sm hover:bg-[#fff5eb] whitespace-nowrap">
