@@ -23,7 +23,7 @@
 
                     <div className="flex flex-col gap-3 mb-8">
                         <div v-for="(feature, index) in featureCards" :key="index"
-                            className="w-full h-[100px] bg-white rounded-3xl border border-solid border-neutral-200">
+                            className="w-full md:h-[100px] bg-white rounded-3xl border border-solid border-neutral-200">
                             <div className="p-5 h-full flex flex-col justify-center">
                             <div className="flex flex-col gap-3">
                                 <h3 className="[font-family:'Manrope',Helvetica] font-bold text-[#202020] text-sm text-justify tracking-[0] leading-[normal]">

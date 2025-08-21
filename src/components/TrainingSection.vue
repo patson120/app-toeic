@@ -20,12 +20,12 @@
                     />
                 </BaseCarousel>
             </div>
-            <div class="col-span-full md:col-span-2 h-[520px] w-full  bg-[#f4f0fd] rounded-3xl md:rounded-[44px] pt-6 md:pt-20 pb-6 md:pb-10">
+            <div class="col-span-full md:col-span-2 h-[370px] md:h-[520px] w-full  bg-[#f4f0fd] rounded-3xl md:rounded-[44px] pt-6 md:pt-20 pb-6 md:pb-10">
                 <h1 className="font-bold md:font-extrabold text-black text-3xl md:text-4xl px-5 md:px-10">
                     Career Boost
                 </h1>
             </div>
-            <div class="col-span-full md:col-span-2 h-[520px] w-full bg-[#fff5eb] rounded-3xl md:rounded-[44px]  overflow-hidden">
+            <div class="col-span-full md:col-span-2 h-auto md:h-[520px] w-full bg-[#fff5eb] rounded-3xl md:rounded-[44px] pt-6 md:pt-0 overflow-hidden">
                 <img 
                     class="w-full h-full object-contain"
                     src="/assets/img/phone-1.png" 
@@ -111,7 +111,7 @@
                     />
                 </BaseCarousel>
             </div>
-            <div class="col-span-full md:col-span-2 h-[520px] w-full bg-[#fff5eb] rounded-[44px] overflow-hidden">
+            <div class="col-span-full md:col-span-2 h-auto md:h-[520px] w-full bg-[#fff5eb] rounded-3xl md:rounded-[44px] overflow-hidden">
                 <img 
                     class="w-full h-full object-cover"
                     src="/assets/img/rectangle-8.png" 
