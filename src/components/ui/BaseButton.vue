@@ -111,13 +111,10 @@
   
   /* Variants */
   .button-primary {
-    background: linear-gradient(135deg, #3B82F6, #1D4ED8);
-    color: white;
     box-shadow: 0 4px 15px rgba(59, 130, 246, 0.4);
   }
   
   .button-primary:hover:not(.button-disabled) {
-    background: linear-gradient(135deg, #2563EB, #1E40AF);
     transform: translateY(-2px);
     box-shadow: 0 8px 25px rgba(59, 130, 246, 0.6);
   }
@@ -178,14 +175,11 @@
   }
   
   .button-outline {
-    background: transparent;
-    color: #3B82F6;
-    border: 2px solid #3B82F6;
+    border: 2px solid;
   }
   
   .button-outline:hover:not(.button-disabled) {
-    background: #3B82F6;
-    color: white;
+   
   }
   
   /* States */

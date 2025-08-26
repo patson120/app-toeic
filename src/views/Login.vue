@@ -1,109 +1,493 @@
 <template>
-  <div class="min-h-screen bg-gradient-to-br from-primary-50 to-blue-100 flex items-center justify-center p-4">
-    <div class="card max-w-md w-full p-8 animate-fade-in">
-      <div class="text-center mb-6">
-        <div class="w-16 h-16 bg-primary-600 rounded-xl flex items-center justify-center mx-auto mb-4">
-          <span class="text-white font-bold text-2xl">T</span>
-        </div>
-        <h1 class="text-2xl font-bold text-gray-900">{{ $t('auth.loginTitle') }}</h1>
-        <p class="text-gray-600 mt-2">{{ $t('auth.loginSubtitle') }}</p>
+  <div class="login-container relative">
+    
+      <div class="absolute top-7 left-7 h-14 w-14 overflow-hidden">
+          <img  class="w-full h-full object-contain"
+          src="/logo.png" alt="Logo English For Real">
       </div>
+      <div class="login-content min-h-screen max-w-md mx-auto flex justify-center items-center">
 
-      <!-- Connexion Google -->
-      <div class="mb-6">
-        <GoogleLoginButton @error="error = $event" />
-        
-        <div class="relative my-6">
-          <div class="absolute inset-0 flex items-center">
-            <div class="w-full border-t border-gray-300"></div>
+          <div class="login-card">
+              <div class="mb-5">
+                  <h1 class="font-bold text-black text-2xl text-center">Se connecter</h1>
+              </div>
+          
+              <form @submit.prevent="handleLogin" class="login-form">
+                  <BaseInput
+                    v-model="loginForm.email"
+                    type="email"
+                    label="Adresse email"
+                    placeholder="votre@email.com"
+                    :error="errors.email"
+                    required
+                    clearable
+                  />
+                  
+                  <BaseInput
+                    v-model="loginForm.password"
+                    type="password"
+                    label="Mot de passe"
+                    placeholder="••••••••"
+                    :error="errors.password"
+                    required
+                  />
+                  
+                  <div class="form-options">
+                  <label class="remember-me">
+                      <input type="checkbox" v-model="loginForm.rememberMe">
+                      <span class="checkmark"></span>
+                      Se souvenir de moi
+                  </label>
+                  <a href="#" class="forgot-password">Mot de passe oublié ?</a>
+                  </div>
+                  
+                  <BaseButton
+                    type="submit"
+                    variant="primary"
+                    size="md"
+                    :loading="isLoading"
+                    full-width
+                    class="login-button bg-orange text-black p-0"
+                    >
+                    Se connecter
+                  </BaseButton>
+                  
+                  <div class="divider flex flex-row justify-center">
+                      <span class="h-1 border-t border-t-gray-600 w-max mt-3"></span>
+                      <span class="bg-white">ou</span>
+                      <span class="h-1 border-t border-t-gray-600 w-max mt-3"></span>
+                  </div>
+                  
+                  <div class="social-login">
+                  <BaseButton
+                      variant="outline"
+                      size="sm"
+                      full-width
+                      @click="loginWithGoogle"
+                      class="social-button !rounded-full text-black/85 !border-[1px] !border-gray-500">
+                      <div class="flex gap-3 py-[5px]">
+                          <FacebookIcon :size="22" class="text-black" />
+                          Continuer avec Google
+                      </div>
+                  </BaseButton>
+                  
+                  <BaseButton
+                      variant="outline"
+                      size="sm"
+                      full-width
+                      @click="loginWithFacebook"
+                      class="social-button !rounded-full text-black/85 !border-[1px] !border-gray-500"
+                  >
+                      <div class="flex gap-3 py-[5px] font-normal">
+                          <FacebookIcon :size="22" class="text-black" />
+                          Continuer avec Facebook
+                      </div>
+                  </BaseButton>
+                  <BaseButton
+                      variant="outline"
+                      size="sm"
+                      full-width
+                      @click="loginWithApple"
+                      class="social-button !rounded-full text-black/85 !border-[1px] !border-gray-500"
+                  >
+                      <div class="flex gap-3 py-[5px] font-normal">
+                          <FacebookIcon :size="22" class="text-black" />
+                          Continuer avec Apple
+                      </div>
+                  </BaseButton>
+                  </div>
+                  
+                  <div class="signup-link">
+                  <p>Vous n'avez pas de compte ? <a href="#" @click="showSignup = true">Créer un compte</a></p>
+                  </div>
+              </form>
           </div>
-          <div class="relative flex justify-center text-sm">
-            <span class="px-2 bg-white text-gray-500">{{ $t('auth.orContinueWith') }}</span>
+      </div>
+      
+      <!-- Success Alert -->
+      <BaseAlert
+          v-model="showSuccessAlert"
+          type="success"
+          title="Connexion réussie !"
+          message="Vous allez être redirigé vers votre tableau de bord."
+          variant="filled"
+          :closable="false"
+          class="success-alert"
+      />
+      
+      <!-- Signup Modal -->
+      <BaseModal v-model="showSignup" title="Créer un compte" size="md">
+          <div class="signup-content">
+          <BaseInput
+              v-model="signupForm.name"
+              label="Nom complet"
+              placeholder="Votre nom"
+              prefix-icon="fas fa-user"
+          />
+          <BaseInput
+              v-model="signupForm.email"
+              type="email"
+              label="Adresse email"
+              placeholder="votre@email.com"
+              prefix-icon="fas fa-envelope"
+          />
+          <BaseInput
+              v-model="signupForm.password"
+              type="password"
+              label="Mot de passe"
+              placeholder="••••••••"
+              prefix-icon="fas fa-lock"
+          />
           </div>
-        </div>
-      </div>
-
-      <form @submit.prevent="handleLogin" class="space-y-4">
-        <div>
-          <label for="email" class="block text-sm font-medium text-gray-700 mb-1">
-            {{ $t('common.email') }}
-          </label>
-          <input 
-            id="email"
-            v-model="form.email" 
-            type="email" 
-            required
-            class="input-field"
-            :placeholder="$t('common.email')"
-          />
-        </div>
-
-        <div>
-          <label for="password" class="block text-sm font-medium text-gray-700 mb-1">
-            {{ $t('common.password') }}
-          </label>
-          <input 
-            id="password"
-            v-model="form.password" 
-            type="password" 
-            required
-            class="input-field"
-            :placeholder="$t('common.password')"
-          />
-        </div>
-
-        <div v-if="error" class="bg-red-50 border border-red-200 text-red-600 px-4 py-3 rounded-lg text-sm">
-          {{ error }}
-        </div>
-
-        <button 
-          type="submit" 
-          :disabled="authStore.isLoading"
-          class="w-full btn-primary py-3 flex items-center justify-center space-x-2"
-        >
-          <LoadingSpinner v-if="authStore.isLoading" />
-          <span v-else>{{ $t('common.login') }}</span>
-        </button>
-      </form>
-
-      <div class="mt-6 text-center">
-        <p class="text-gray-600">
-          {{ $t('auth.noAccount') }}
-          <router-link to="/register" class="text-primary-600 hover:text-primary-700 font-medium">
-            {{ $t('common.register') }}
-          </router-link>
-        </p>
-      </div>
-    </div>
+          
+          <template #footer>
+          <BaseButton variant="ghost" @click="showSignup = false">Annuler</BaseButton>
+          <BaseButton variant="primary" @click="handleSignup">Créer le compte</BaseButton>
+          </template>
+      </BaseModal>
   </div>
 </template>
 
 <script setup lang="ts">
-import { ref } from 'vue'
-import { useRouter } from 'vue-router'
-import { useAuthStore } from '../stores/auth'
-import LoadingSpinner from '../components/LoadingSpinner.vue'
-import GoogleLoginButton from '../components/GoogleLoginButton.vue'
+import { ref, reactive, computed, watch, onMounted, onUnmounted } from 'vue';
+import { BaseInput, BaseButton, BaseAlert, BaseModal } from '../components/ui';
+import { FacebookIcon } from "lucide-vue-next";
 
-const router = useRouter()
-const authStore = useAuthStore()
+// ===== DATA =====
+const isLoading = ref(false);
+const showSuccessAlert = ref(false);
+const showSignup = ref(false);
 
-const form = ref({
+const loginForm = reactive({
+  email: '',
+  password: '',
+  rememberMe: false
+});
+
+const signupForm = reactive({
+  name: '',
   email: '',
   password: ''
-})
+});
 
-const error = ref('')
+const errors = reactive({
+  email: '',
+  password: ''
+});
 
-const handleLogin = async () => {
-  error.value = ''
+// ===== COMPUTED =====
+// Computed properties pour une utilisation future
+const isFormValid = computed(() => {
+  return loginForm.email && 
+         loginForm.password && 
+         loginForm.email.includes('@') && 
+         loginForm.password.length >= 6;
+});
+
+const loginButtonText = computed(() => {
+  return isLoading.value ? 'Connexion...' : 'Se connecter';
+});
+
+const formClasses = computed(() => {
+  return {
+    'form-loading': isLoading.value,
+    'form-valid': isFormValid.value
+  };
+});
+
+// ===== METHODS =====
+const validateForm = () => {
+  errors.email = '';
+  errors.password = '';
   
-  const result = await authStore.login(form.value.email, form.value.password)
-  
-  if (result.success) {
-    router.push('/dashboard')
-  } else {
-    error.value = result.error || 'Erreur de connexion'
+  if (!loginForm.email) {
+    errors.email = 'L\'adresse email est requise';
+    return false;
   }
-}
+  
+  if (!loginForm.email.includes('@')) {
+    errors.email = 'Veuillez entrer une adresse email valide';
+    return false;
+  }
+  
+  if (!loginForm.password) {
+    errors.password = 'Le mot de passe est requis';
+    return false;
+  }
+  
+  if (loginForm.password.length < 6) {
+    errors.password = 'Le mot de passe doit contenir au moins 6 caractères';
+    return false;
+  }
+  
+  return true;
+};
+
+const resetForm = () => {
+  loginForm.email = '';
+  loginForm.password = '';
+  loginForm.rememberMe = false;
+  errors.email = '';
+  errors.password = '';
+};
+
+const showNotification = (type: 'success' | 'error', message: string) => {
+  // Méthode pour afficher des notifications
+  console.log(`${type}: ${message}`);
+};
+
+const saveToLocalStorage = () => {
+  if (loginForm.rememberMe) {
+    localStorage.setItem('rememberedEmail', loginForm.email);
+  } else {
+    localStorage.removeItem('rememberedEmail');
+  }
+};
+
+const loadFromLocalStorage = () => {
+  const rememberedEmail = localStorage.getItem('rememberedEmail');
+  if (rememberedEmail) {
+    loginForm.email = rememberedEmail;
+    loginForm.rememberMe = true;
+  }
+};
+
+// ===== LIFECYCLE & EVENT HANDLERS =====
+const handleLogin = async () => {
+  if (!validateForm()) return;
+  
+  isLoading.value = true;
+  saveToLocalStorage();
+  
+  // Simulation d'une requête de connexion
+  setTimeout(() => {
+    isLoading.value = false;
+    showSuccessAlert.value = true;
+    showNotification('success', 'Connexion réussie !');
+    
+    // Masquer l'alerte après 3 secondes
+    setTimeout(() => {
+      showSuccessAlert.value = false;
+    }, 3000);
+  }, 2000);
+};
+
+const loginWithGoogle = () => {
+  console.log('Connexion avec Google');
+  // Logique future pour Google OAuth
+};
+
+const loginWithFacebook = () => {
+  console.log('Connexion avec Facebook');
+  // Logique future pour Facebook OAuth
+};
+const loginWithApple = () => {
+  console.log('Connexion avec Apple');
+  // Logique future pour Apple OAuth
+};
+
+const handleSignup = () => {
+  console.log('Création de compte:', signupForm);
+  showSignup.value = false;
+  // Logique future pour la création de compte
+};
+
+const handleForgotPassword = () => {
+  console.log('Mot de passe oublié pour:', loginForm.email);
+  // Logique future pour la récupération de mot de passe
+};
+
+const handleKeyPress = (event: KeyboardEvent) => {
+  if (event.key === 'Enter' && isFormValid.value) {
+    handleLogin();
+  }
+};
+
+// ===== WATCHERS =====
+// Watchers pour une utilisation future
+watch(() => loginForm.email, (newEmail) => {
+  // Validation en temps réel de l'email
+  if (newEmail && !newEmail.includes('@')) {
+    errors.email = 'Format d\'email invalide';
+  } else {
+    errors.email = '';
+  }
+});
+
+watch(() => loginForm.password, (newPassword) => {
+  // Validation en temps réel du mot de passe
+  if (newPassword && newPassword.length < 6) {
+    errors.password = 'Minimum 6 caractères requis';
+  } else {
+    errors.password = '';
+  }
+});
+
+// ===== LIFECYCLE HOOKS =====
+onMounted(() => {
+  loadFromLocalStorage();
+  // Autres initialisations
+});
+
+onUnmounted(() => {
+  // Nettoyage si nécessaire
+});
 </script>
+
+<style scoped>
+.login-container {
+  min-height: 100vh;
+  position: relative;
+  overflow: hidden;
+  background: white;
+  background-image: url('/assets/img/login-bg.png');
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.login-background {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+}
+
+
+
+.login-card {
+  flex: 1;
+  background: white;
+  border-radius: 24px;
+  padding: 3rem;
+  box-shadow: 0 25px 50px rgba(0, 0, 0, 0.25);
+  backdrop-filter: blur(10px);
+}
+
+
+.login-form {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.form-options {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin: -0.5rem 0 0.5rem 0;
+}
+
+.remember-me {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-size: 0.875rem;
+  color: #6B7280;
+  cursor: pointer;
+}
+
+.remember-me input[type="checkbox"] {
+  display: none;
+}
+
+.checkmark {
+  width: 18px;
+  height: 18px;
+  border: 2px solid #D1D5DB;
+  border-radius: 4px;
+  position: relative;
+  transition: all 0.2s ease;
+}
+
+.remember-me input[type="checkbox"]:checked + .checkmark {
+  background: #3B82F6;
+  border-color: #3B82F6;
+}
+
+.remember-me input[type="checkbox"]:checked + .checkmark::after {
+  content: '✓';
+  position: absolute;
+  top: -2px;
+  left: 2px;
+  color: white;
+  font-size: 12px;
+  font-weight: bold;
+}
+
+.forgot-password {
+  color: #3B82F6;
+  text-decoration: none;
+  font-size: 0.875rem;
+  font-weight: 500;
+}
+
+.forgot-password:hover {
+  text-decoration: underline;
+}
+
+.login-button {
+  margin-top: 1rem;
+}
+
+.divider {
+  text-align: center;
+  margin: 1.5rem 0;
+}
+
+
+
+.divider span {
+  background: white;
+  color: #9CA3AF;
+  padding: 0 1rem;
+  font-size: 0.875rem;
+}
+
+.social-login {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+
+.social-button {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+}
+
+.social-button i {
+  font-size: 1.1rem;
+}
+
+.signup-link {
+  text-align: center;
+  margin-top: 1.5rem;
+}
+
+.signup-link p {
+  color: #6B7280;
+  font-size: 0.875rem;
+  margin: 0;
+}
+
+.signup-link a {
+  color: #3B82F6;
+  text-decoration: none;
+  font-weight: 500;
+}
+
+.signup-link a:hover {
+  text-decoration: underline;
+}
+ 
+.success-alert {
+  position: fixed;
+  top: 2rem;
+  right: 2rem;
+  z-index: 1000;
+  max-width: 400px;
+}  
+</style>
