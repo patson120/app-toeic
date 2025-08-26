@@ -12,7 +12,7 @@
                   <h1 class="font-bold text-black text-2xl text-center">Se connecter</h1>
               </div>
           
-              <form @submit.prevent="handleLogin" class="login-form">
+              <form @keypress="handleKeyPress" @submit.prevent="handleLogin" class="login-form">
                   <BaseInput
                     v-model="loginForm.email"
                     type="email"
@@ -65,7 +65,7 @@
                       full-width
                       @click="loginWithGoogle"
                       class="social-button !rounded-full text-black/85 !border-[1px] !border-gray-500">
-                      <div class="flex gap-3 py-[5px]">
+                      <div class="flex gap-3 py-[5px] font-normal">
                           <FacebookIcon :size="22" class="text-black" />
                           Continuer avec Google
                       </div>
@@ -98,7 +98,7 @@
                   </div>
                   
                   <div class="signup-link">
-                  <p>Vous n'avez pas de compte ? <a href="#" @click="showSignup = true">Créer un compte</a></p>
+                  <p>Vous découvrez l'application TOEIC ? <router-link to="/register">Inscrivez-vous</router-link></p>
                   </div>
               </form>
           </div>
@@ -153,6 +153,14 @@ import { ref, reactive, computed, watch, onMounted, onUnmounted } from 'vue';
 import { BaseInput, BaseButton, BaseAlert, BaseModal } from '../components/ui';
 import { FacebookIcon } from "lucide-vue-next";
 
+import { useRouter } from 'vue-router'
+import { useAuthStore } from '../stores/auth'
+
+const router = useRouter()
+const authStore = useAuthStore()
+
+
+
 // ===== DATA =====
 const isLoading = ref(false);
 const showSuccessAlert = ref(false);
@@ -184,16 +192,16 @@ const isFormValid = computed(() => {
          loginForm.password.length >= 6;
 });
 
-const loginButtonText = computed(() => {
-  return isLoading.value ? 'Connexion...' : 'Se connecter';
-});
+// const loginButtonText = computed(() => {
+//   return isLoading.value ? 'Connexion...' : 'Se connecter';
+// });
 
-const formClasses = computed(() => {
-  return {
-    'form-loading': isLoading.value,
-    'form-valid': isFormValid.value
-  };
-});
+// const formClasses = computed(() => {
+//   return {
+//     'form-loading': isLoading.value,
+//     'form-valid': isFormValid.value
+//   };
+// });
 
 // ===== METHODS =====
 const validateForm = () => {
@@ -253,6 +261,7 @@ const loadFromLocalStorage = () => {
 };
 
 // ===== LIFECYCLE & EVENT HANDLERS =====
+
 const handleLogin = async () => {
   if (!validateForm()) return;
   
@@ -260,16 +269,24 @@ const handleLogin = async () => {
   saveToLocalStorage();
   
   // Simulation d'une requête de connexion
-  setTimeout(() => {
+
+  const result = await authStore.login(loginForm.email, loginForm.password)
+  
+  if (result.success) {
     isLoading.value = false;
     showSuccessAlert.value = true;
     showNotification('success', 'Connexion réussie !');
-    
     // Masquer l'alerte après 3 secondes
     setTimeout(() => {
       showSuccessAlert.value = false;
+      resetForm()
+      router.push('/')
     }, 3000);
-  }, 2000);
+  } else {
+    // error.value = result.error || 'Erreur de connexion'
+    console.log("Erreur de connexion !");
+    
+  }
 };
 
 const loginWithGoogle = () => {
@@ -292,10 +309,10 @@ const handleSignup = () => {
   // Logique future pour la création de compte
 };
 
-const handleForgotPassword = () => {
-  console.log('Mot de passe oublié pour:', loginForm.email);
-  // Logique future pour la récupération de mot de passe
-};
+// const handleForgotPassword = () => {
+//   console.log('Mot de passe oublié pour:', loginForm.email);
+//   // Logique future pour la récupération de mot de passe
+// };
 
 const handleKeyPress = (event: KeyboardEvent) => {
   if (event.key === 'Enter' && isFormValid.value) {

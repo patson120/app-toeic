@@ -21,6 +21,8 @@ export const useAuthStore = defineStore('auth', () => {
 
   const login = async (email: string, password: string) => {
     isLoading.value = true
+    console.log(password);
+    
     try {
       // Simulation d'une requête API
       await new Promise(resolve => setTimeout(resolve, 1000))
@@ -55,17 +57,20 @@ export const useAuthStore = defineStore('auth', () => {
     try {
       await new Promise(resolve => setTimeout(resolve, 1000))
       
-      const userData = {
-        id: Date.now().toString(),
-        email,
-        name,
-        provider: 'email' as const,
-        level: 'Beginner',
-        testsCompleted: 0
-      }
+      // const userData = {
+      //   id: Date.now().toString(),
+      //   email,
+      //   name,
+      //   provider: 'email' as const,
+      //   level: 'Beginner',
+      //   testsCompleted: 0
+      // }
+
+      console.log(name, email, password);
       
-      user.value = userData
-      localStorage.setItem('user', JSON.stringify(userData))
+      
+      // user.value = userData
+      // localStorage.setItem('user', JSON.stringify(userData))
       
       // Réinitialiser l'onboarding pour les nouveaux utilisateurs
       const onboardingStore = useOnboardingStore()
