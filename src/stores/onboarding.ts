@@ -3,12 +3,13 @@ import { ref } from 'vue'
 
 export const useOnboardingStore = defineStore('onboarding', () => {
   const hasCompletedOnboarding = ref(false)
+  const targetScore = ref(700)
   const currentStep = ref(0)
 
   const steps = [
     {
-      title: 'Bienvenue sur TOEIC Pro',
-      description: 'Évaluez votre niveau d\'anglais avec nos tests professionnels',
+      title: 'Quel est votre objectif TOEIC ?',
+      description: "Définissons ensemble votre score cible pour personnaliser votre parcours d'apprentissage",
       icon: '🎯',
       action: 'Commencer'
     },
@@ -70,6 +71,7 @@ export const useOnboardingStore = defineStore('onboarding', () => {
   return {
     hasCompletedOnboarding,
     currentStep,
+    targetScore,
     steps,
     loadOnboardingStatus,
     nextStep,

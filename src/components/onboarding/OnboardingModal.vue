@@ -66,7 +66,7 @@
 
 <script setup lang="ts">
 import { computed } from 'vue'
-import { useOnboardingStore } from '../stores/onboarding'
+import { useOnboardingStore } from '../../stores/onboarding'
 import { ArrowLeft, ArrowRight, CheckCircle } from 'lucide-vue-next'
 
 const onboardingStore = useOnboardingStore()

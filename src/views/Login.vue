@@ -149,16 +149,15 @@
 </template>
 
 <script setup lang="ts">
-import { ref, reactive, computed, watch, onMounted, onUnmounted } from 'vue';
-import { BaseInput, BaseButton, BaseAlert, BaseModal } from '../components/ui';
 import { FacebookIcon } from "lucide-vue-next";
+import { computed, onMounted, onUnmounted, reactive, ref, watch } from 'vue';
+import { BaseAlert, BaseButton, BaseInput, BaseModal } from '../components/ui';
 
-import { useRouter } from 'vue-router'
-import { useAuthStore } from '../stores/auth'
+import { useRouter } from 'vue-router';
+import { useAuthStore } from '../stores/auth';
 
 const router = useRouter()
 const authStore = useAuthStore()
-
 
 
 // ===== DATA =====
@@ -280,7 +279,7 @@ const handleLogin = async () => {
     setTimeout(() => {
       showSuccessAlert.value = false;
       resetForm()
-      router.push('/')
+      router.push('/onboarding')
     }, 3000);
   } else {
     // error.value = result.error || 'Erreur de connexion'

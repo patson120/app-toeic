@@ -16,14 +16,14 @@ const routes = [
   },
   {
     path: '/',
-    name: 'home',
+    name: 'Home',
     component: () => import('../views/Home.vue'),
     meta: { requiresAuth: true }
   },
   {
-    path: '/test',
-    name: 'test',
-    component: () => import('../views/TestView.vue'),
+    path: '/onboarding',
+    name: 'Onboarding',
+    component: () => import('../views/Onboarding.vue'),
     meta: { requiresAuth: true }
   },
   {

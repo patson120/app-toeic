@@ -37,7 +37,7 @@ html.dark {
 
 @layer components {
   .btn-primary {
-    @apply bg-primary-600 hover:bg-primary-700 dark:bg-primary-500 dark:hover:bg-primary-600 text-white font-medium py-2 px-4 rounded-lg transition-all duration-300 focus:outline-none focus:ring-2 focus:ring-primary-500 focus:ring-offset-2 dark:focus:ring-offset-gray-800 shadow-lg hover:shadow-xl transform hover:scale-105;
+    @apply bg-orange hover:bg-orange font-medium py-2 px-4 rounded-lg transition-all duration-300 focus:outline-none focus:ring-2 focus:ring-orange focus:ring-offset-2  shadow-lg hover:shadow-xl transform hover:scale-105;
   }
   
   .btn-secondary {
