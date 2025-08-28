@@ -18,9 +18,6 @@
 
       <!-- Content -->
       <div class="text-center mb-8">
-        <div class="text-6xl mb-4 animate-bounce">
-          {{ currentStep.icon }}
-        </div>
         <h2 class="text-2xl font-bold text-gray-900 dark:text-white mb-3">
           {{ currentStep.title }}
         </h2>
