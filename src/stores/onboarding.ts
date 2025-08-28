@@ -3,32 +3,35 @@ import { ref } from 'vue'
 
 export const useOnboardingStore = defineStore('onboarding', () => {
   const hasCompletedOnboarding = ref(false)
-  const targetScore = ref(700)
+  const targetScore = ref(780)
   const currentStep = ref(0)
 
   const steps = [
     {
       title: 'Quel est votre objectif TOEIC ?',
       description: "Définissons ensemble votre score cible pour personnaliser votre parcours d'apprentissage",
-      icon: '🎯',
+      // icon: '🎯',
+      buttons: ['Débutant (A1-A2)', 'Intermédiaire (B1-B2)', 'Avancé (C1-C2)'],
+      selectedLevel: '',
+      score: targetScore,
       action: 'Commencer'
     },
     {
       title: 'Choisissez votre niveau',
       description: 'Sélectionnez le niveau qui correspond le mieux à vos compétences actuelles',
-      icon: '📚',
+      // icon: '📚',
       action: 'Continuer'
     },
     {
       title: 'Passez le test',
       description: 'Répondez aux questions dans le temps imparti pour obtenir votre score',
-      icon: '⏱️',
+      // icon: '⏱️',
       action: 'Continuer'
     },
     {
       title: 'Consultez vos résultats',
       description: 'Obtenez une analyse détaillée de vos performances et des recommandations',
-      icon: '📊',
+      // icon: '📊',
       action: 'Terminer'
     }
   ]
