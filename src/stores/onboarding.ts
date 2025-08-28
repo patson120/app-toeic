@@ -10,7 +10,6 @@ export const useOnboardingStore = defineStore('onboarding', () => {
     {
       title: 'Quel est votre objectif TOEIC ?',
       description: "Définissons ensemble votre score cible pour personnaliser votre parcours d'apprentissage",
-      // icon: '🎯',
       buttons: ['Débutant (A1-A2)', 'Intermédiaire (B1-B2)', 'Avancé (C1-C2)'],
       selectedLevel: '',
       score: targetScore,
@@ -19,19 +18,16 @@ export const useOnboardingStore = defineStore('onboarding', () => {
     {
       title: 'Choisissez votre niveau',
       description: 'Sélectionnez le niveau qui correspond le mieux à vos compétences actuelles',
-      // icon: '📚',
       action: 'Continuer'
     },
     {
       title: 'Passez le test',
       description: 'Répondez aux questions dans le temps imparti pour obtenir votre score',
-      // icon: '⏱️',
       action: 'Continuer'
     },
     {
       title: 'Consultez vos résultats',
       description: 'Obtenez une analyse détaillée de vos performances et des recommandations',
-      // icon: '📊',
       action: 'Terminer'
     }
   ]
