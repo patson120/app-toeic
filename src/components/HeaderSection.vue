@@ -3,7 +3,7 @@
       <div className="flex items-center justify-between max-width">
         <div className="flex items-center shrink-0">
           <img
-            className="w-[45px] h-[45px] md:w-[70px] md:h-[70px] object-cover"
+            className="w-[45px] h-[45px] md:w-[70px] md:h-[70px] object-contain"
             alt="Logo English For Real"
             src="/logo.png"
           />
