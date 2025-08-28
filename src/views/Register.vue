@@ -13,94 +13,92 @@
               </div>
           
               <form @keypress="handleKeyPress" @submit.prevent="handleRegister" class="login-form">
-                  <BaseInput
-                    v-model="registerForm.email"
-                    type="email"
-                    label="Adresse email"
-                    placeholder="votre@email.com"
-                    :error="errors.email"
-                    required
-                    clearable
-                  />
+                <BaseInput
+                  v-model="registerForm.email"
+                  type="email"
+                  label="Adresse email"
+                  placeholder="votre@email.com"
+                  :error="errors.email"
+                  required
+                  clearable
+                />
                   
-                  <BaseInput
-                    v-model="registerForm.password"
-                    type="password"
-                    label="Mot de passe"
-                    placeholder="••••••••"
-                    :error="errors.password"
-                    required
-                  />
+                <BaseInput
+                  v-model="registerForm.password"
+                  type="password"
+                  label="Mot de passe"
+                  placeholder="••••••••"
+                  :error="errors.password"
+                  required
+                />
                   
+                <BaseButton
+                  type="submit"
+                  variant="primary"
+                  size="md"
+                  :loading="isLoading"
+                  full-width
+                  class="login-button bg-orange text-black p-0">
+                  S'inscrire
+                </BaseButton>
+                  
+                <div class="divider flex flex-row justify-center">
+                  <span class="h-1 border-t border-t-gray-600 w-max mt-3"></span>
+                  <span class="bg-white">ou</span>
+                  <span class="h-1 border-t border-t-gray-600 w-max mt-3"></span>
+                </div>
+                  
+                <div class="social-login flex !flex-row md:!flex-col justify-center items-center">
                   <BaseButton
-                    type="submit"
-                    variant="primary"
-                    size="md"
-                    :loading="isLoading"
-                    full-width
-                    class="login-button bg-orange text-black p-0">
-                    S'inscrire
-                  </BaseButton>
-                  
-                  <div class="divider flex flex-row justify-center">
-                      <span class="h-1 border-t border-t-gray-600 w-max mt-3"></span>
-                      <span class="bg-white">ou</span>
-                      <span class="h-1 border-t border-t-gray-600 w-max mt-3"></span>
-                  </div>
-                  
-                  <div class="social-login flex !flex-row md:!flex-col justify-center items-center">
-                      <BaseButton
-                          variant="outline"
-                          size="sm"
-                          rounded
-                          @click="registerWithGoogle"
-                          class="social-button md:!w-full text-black/85 !border-[1px] !border-gray-500">
-                          <div class="flex gap-3 py-[5px] font-normal">
-                            <img 
-                              src="/assets/icons/google.png"
-                              alt="Logo Google" 
-                              class="w-6 h-6 object-contain"
-                            />
-                            <span class="hidden md:inline-flex">Continuer avec Google</span>
-                          </div>
-                      </BaseButton>
-                      
-                      <BaseButton
-                        variant="outline"
-                        size="sm"
-                        rounded
-                        @click="registerWithFacebook"
-                        class="social-button md:!w-full text-black/85 !border-[1px] !border-gray-500">
-                        <div class="flex justify-center items-center gap-3 py-[5px] font-normal">
-                          <img 
-                            src="/assets/icons/facebook.png"
-                            alt="Logo facebook" 
-                            class="w-6 h-6 object-contain"
-                          />
-                          <span class="hidden md:inline-flex">Continuer avec Facebook</span>
-                        </div>
-                      </BaseButton>
-
-                      <BaseButton
-                        variant="outline"
-                        size="sm"
-                        rounded
-                        @click="registerWithApple"
-                        class="social-button md:!w-full text-black/85 !border-[1px] !border-gray-500">
-                        <div class="flex justify-center items-center gap-3 py-[5px] font-normal">
-                          <img 
-                            src="/assets/icons/logo-apple.png"
-                            alt="Logo Apple" 
-                            class="w-6 h-6 object-contain"
-                          />
-                          <span class="hidden md:inline-flex">Continuer avec Apple</span>
-                        </div>
-                      </BaseButton>
+                    variant="outline"
+                    size="sm"
+                    rounded
+                    @click="registerWithGoogle"
+                    class="social-button md:!w-full text-black/85 !border-[1px] !border-gray-500">
+                    <div class="flex gap-3 py-[5px] font-normal">
+                      <img 
+                        src="/assets/icons/google.png"
+                        alt="Logo Google" 
+                        class="w-6 h-6 object-contain"
+                      />
+                      <span class="hidden md:inline-flex">Continuer avec Google</span>
                     </div>
+                  </BaseButton>
+                  <BaseButton
+                    variant="outline"
+                    size="sm"
+                    rounded
+                    @click="registerWithFacebook"
+                    class="social-button md:!w-full text-black/85 !border-[1px] !border-gray-500">
+                    <div class="flex justify-center items-center gap-3 py-[5px] font-normal">
+                      <img 
+                        src="/assets/icons/facebook.png"
+                        alt="Logo facebook" 
+                        class="w-6 h-6 object-contain"
+                      />
+                      <span class="hidden md:inline-flex">Continuer avec Facebook</span>
+                    </div>
+                  </BaseButton>
+                  <BaseButton
+                    variant="outline"
+                    size="sm"
+                    rounded
+                    @click="registerWithApple"
+                    class="social-button md:!w-full text-black/85 !border-[1px] !border-gray-500">
+                    <div class="flex justify-center items-center gap-3 py-[5px] font-normal">
+                      <img 
+                        src="/assets/icons/logo-apple.png"
+                        alt="Logo Apple" 
+                        class="w-6 h-6 object-contain"
+                      />
+                      <span class="hidden md:inline-flex">Continuer avec Apple</span>
+                    </div>
+                  </BaseButton>
+                </div>
                   
-                  <div class="signup-link">
-                    <p>Avez-vous déjà un compte ? <router-link to="/login">Se connecter</router-link></p>
-                  </div>
+                <div class="signup-link">
+                  <p>Avez-vous déjà un compte ? <router-link to="/login">Se connecter</router-link></p>
+                </div>
               </form>
           </div>
       </div>
