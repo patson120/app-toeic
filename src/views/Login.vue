@@ -58,51 +58,52 @@
                         <span class="h-1 border-t border-t-gray-600 w-max mt-3"></span>
                     </div>
                   
-                    <div class="social-login">
+                    <div class="social-login flex !flex-row md:!flex-col justify-center items-center">
                       <BaseButton
                           variant="outline"
                           size="sm"
-                          full-width
+                          rounded
                           @click="loginWithGoogle"
-                          class="social-button !rounded-full text-black/85 !border-[1px] !border-gray-500">
+                          class="social-button md:!w-full text-black/85 !border-[1px] !border-gray-500">
                           <div class="flex gap-3 py-[5px] font-normal">
                             <img 
                               src="/assets/icons/google.png"
                               alt="Logo Google" 
                               class="w-6 h-6 object-contain"
                             />
-                            Continuer avec Google
+                            <span class="hidden md:inline-flex">Continuer avec Google</span>
                           </div>
                       </BaseButton>
                       
                       <BaseButton
                         variant="outline"
                         size="sm"
-                        full-width
+                        rounded
                         @click="loginWithFacebook"
-                        class="social-button !rounded-full text-black/85 !border-[1px] !border-gray-500">
+                        class="social-button md:!w-full text-black/85 !border-[1px] !border-gray-500">
                         <div class="flex justify-center items-center gap-3 py-[5px] font-normal">
                           <img 
                             src="/assets/icons/facebook.png"
                             alt="Logo facebook" 
                             class="w-6 h-6 object-contain"
                           />
-                          Continuer avec Facebook
+                          <span class="hidden md:inline-flex">Continuer avec Facebook</span>
                         </div>
                       </BaseButton>
+
                       <BaseButton
                         variant="outline"
                         size="sm"
-                        full-width
+                        rounded
                         @click="loginWithApple"
-                        class="social-button !rounded-full text-black/85 !border-[1px] !border-gray-500">
+                        class="social-button md:!w-full text-black/85 !border-[1px] !border-gray-500">
                         <div class="flex justify-center items-center gap-3 py-[5px] font-normal">
                           <img 
                             src="/assets/icons/logo-apple.png"
                             alt="Logo Apple" 
                             class="w-6 h-6 object-contain"
                           />
-                          Continuer avec Apple
+                          <span class="hidden md:inline-flex">Continuer avec Apple</span>
                         </div>
                       </BaseButton>
                     </div>
