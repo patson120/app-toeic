@@ -57,7 +57,11 @@
                       @click="registerWithGoogle"
                       class="social-button !rounded-full text-black/85 !border-[1px] !border-gray-500">
                       <div class="flex gap-3 py-[5px] font-normal">
-                          <FacebookIcon :size="22" class="text-black" />
+                        <img 
+                          src="/assets/icons/google.png"
+                          alt="Logo Google" 
+                          class="w-6 h-6 object-contain"
+                        />
                           Continuer avec Google
                       </div>
                   </BaseButton>
@@ -70,8 +74,12 @@
                       class="social-button !rounded-full text-black/85 !border-[1px] !border-gray-500"
                   >
                       <div class="flex gap-3 py-[5px] font-normal">
-                          <FacebookIcon :size="22" class="text-black" />
-                          Continuer avec Facebook
+                        <img 
+                          src="/assets/icons/facebook.png"
+                          alt="Logo Facebook" 
+                          class="w-6 h-6 object-contain"
+                        />
+                        Continuer avec Facebook
                       </div>
                   </BaseButton>
                   <BaseButton
@@ -82,8 +90,12 @@
                       class="social-button !rounded-full text-black/85 !border-[1px] !border-gray-500"
                   >
                       <div class="flex gap-3 py-[5px] font-normal">
-                          <FacebookIcon :size="22" class="text-black" />
-                          Continuer avec Apple
+                        <img 
+                          src="/assets/icons/logo-apple.png"
+                          alt="Logo Apple" 
+                          class="w-6 h-6 object-contain"
+                        />
+                        Continuer avec Apple
                       </div>
                   </BaseButton>
                   </div>
@@ -110,7 +122,6 @@
 </template>
 
 <script setup lang="ts">
-import { FacebookIcon } from "lucide-vue-next";
 import { computed, onMounted, onUnmounted, reactive, ref, watch } from 'vue';
 import { BaseAlert, BaseButton, BaseInput } from '../components/ui';
 

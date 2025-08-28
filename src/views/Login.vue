@@ -33,72 +33,81 @@
                   />
                   
                   <div class="form-options">
-                  <label class="remember-me">
-                      <input type="checkbox" v-model="loginForm.rememberMe">
-                      <span class="checkmark"></span>
-                      Se souvenir de moi
-                  </label>
-                  <a href="#" class="forgot-password">Mot de passe oublié ?</a>
-                  </div>
+                    <label class="remember-me">
+                        <input type="checkbox" v-model="loginForm.rememberMe">
+                        <span class="checkmark"></span>
+                        Se souvenir de moi
+                    </label>
+                    <a href="#" class="forgot-password">Mot de passe oublié ?</a>
+                    </div>
                   
-                  <BaseButton
-                    type="submit"
-                    variant="primary"
-                    size="md"
-                    :loading="isLoading"
-                    full-width
-                    class="login-button bg-orange text-black p-0"
-                    >
-                    Se connecter
-                  </BaseButton>
-                  
-                  <div class="divider flex flex-row justify-center">
-                      <span class="h-1 border-t border-t-gray-600 w-max mt-3"></span>
-                      <span class="bg-white">ou</span>
-                      <span class="h-1 border-t border-t-gray-600 w-max mt-3"></span>
-                  </div>
-                  
-                  <div class="social-login">
-                  <BaseButton
-                      variant="outline"
-                      size="sm"
+                    <BaseButton
+                      type="submit"
+                      variant="primary"
+                      size="md"
+                      :loading="isLoading"
                       full-width
-                      @click="loginWithGoogle"
-                      class="social-button !rounded-full text-black/85 !border-[1px] !border-gray-500">
-                      <div class="flex gap-3 py-[5px] font-normal">
-                          <FacebookIcon :size="22" class="text-black" />
-                          Continuer avec Google
-                      </div>
-                  </BaseButton>
+                      class="login-button bg-orange text-black p-0"
+                      >
+                      Se connecter
+                    </BaseButton>
+                    
+                    <div class="divider flex flex-row justify-center">
+                        <span class="h-1 border-t border-t-gray-600 w-max mt-3"></span>
+                        <span class="bg-white">ou</span>
+                        <span class="h-1 border-t border-t-gray-600 w-max mt-3"></span>
+                    </div>
                   
-                  <BaseButton
-                      variant="outline"
-                      size="sm"
-                      full-width
-                      @click="loginWithFacebook"
-                      class="social-button !rounded-full text-black/85 !border-[1px] !border-gray-500"
-                  >
-                      <div class="flex gap-3 py-[5px] font-normal">
-                          <FacebookIcon :size="22" class="text-black" />
+                    <div class="social-login">
+                      <BaseButton
+                          variant="outline"
+                          size="sm"
+                          full-width
+                          @click="loginWithGoogle"
+                          class="social-button !rounded-full text-black/85 !border-[1px] !border-gray-500">
+                          <div class="flex gap-3 py-[5px] font-normal">
+                            <img 
+                              src="/assets/icons/google.png"
+                              alt="Logo Google" 
+                              class="w-6 h-6 object-contain"
+                            />
+                            Continuer avec Google
+                          </div>
+                      </BaseButton>
+                      
+                      <BaseButton
+                        variant="outline"
+                        size="sm"
+                        full-width
+                        @click="loginWithFacebook"
+                        class="social-button !rounded-full text-black/85 !border-[1px] !border-gray-500">
+                        <div class="flex justify-center items-center gap-3 py-[5px] font-normal">
+                          <img 
+                            src="/assets/icons/facebook.png"
+                            alt="Logo facebook" 
+                            class="w-6 h-6 object-contain"
+                          />
                           Continuer avec Facebook
-                      </div>
-                  </BaseButton>
-                  <BaseButton
-                      variant="outline"
-                      size="sm"
-                      full-width
-                      @click="loginWithApple"
-                      class="social-button !rounded-full text-black/85 !border-[1px] !border-gray-500"
-                  >
-                      <div class="flex gap-3 py-[5px] font-normal">
-                          <FacebookIcon :size="22" class="text-black" />
+                        </div>
+                      </BaseButton>
+                      <BaseButton
+                        variant="outline"
+                        size="sm"
+                        full-width
+                        @click="loginWithApple"
+                        class="social-button !rounded-full text-black/85 !border-[1px] !border-gray-500">
+                        <div class="flex justify-center items-center gap-3 py-[5px] font-normal">
+                          <img 
+                            src="/assets/icons/logo-apple.png"
+                            alt="Logo Apple" 
+                            class="w-6 h-6 object-contain"
+                          />
                           Continuer avec Apple
-                      </div>
-                  </BaseButton>
-                  </div>
-                  
+                        </div>
+                      </BaseButton>
+                    </div>
                   <div class="signup-link">
-                  <p>Vous découvrez l'application TOEIC ? <router-link to="/register">Inscrivez-vous</router-link></p>
+                    <p>Vous découvrez l'application TOEIC ? <router-link to="/register">Inscrivez-vous</router-link></p>
                   </div>
               </form>
           </div>
@@ -106,13 +115,13 @@
       
       <!-- Success Alert -->
       <BaseAlert
-          v-model="showSuccessAlert"
-          type="success"
-          title="Connexion réussie !"
-          message="Vous allez être redirigé vers votre tableau de bord."
-          variant="filled"
-          :closable="false"
-          class="success-alert"
+        v-model="showSuccessAlert"
+        type="success"
+        title="Connexion réussie !"
+        message="Vous allez être redirigé vers votre tableau de bord."
+        variant="filled"
+        :closable="false"
+        class="success-alert"
       />
       
       <!-- Signup Modal -->
@@ -149,7 +158,6 @@
 </template>
 
 <script setup lang="ts">
-import { FacebookIcon } from "lucide-vue-next";
 import { computed, onMounted, onUnmounted, reactive, ref, watch } from 'vue';
 import { BaseAlert, BaseButton, BaseInput, BaseModal } from '../components/ui';
 

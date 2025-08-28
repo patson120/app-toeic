@@ -14,7 +14,7 @@
             <span v-if="item.isActive"
               className="px-4 py-3 bg-[#fff5eb] text-black rounded-[28px] font-semibold text-sm hover:bg-[#fff5eb] whitespace-nowrap">
               {{ item.label }}
-          </span>
+            </span>
             <span v-else className=" text-black text-sm cursor-pointer hover:text-gray-600 whitespace-nowrap">
               {{ item.label }}
             </span>
