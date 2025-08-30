@@ -2,11 +2,13 @@
     <header className="w-full py-4 bg-white">
       <div className="flex items-center justify-between max-width">
         <div className="flex items-center shrink-0">
-          <img
-            className="w-[45px] h-[45px] md:w-[70px] md:h-[70px] object-contain"
-            alt="Logo English For Real"
-            src="/logo.png"
-          />
+          <router-link to="/">
+            <img
+              className="w-[45px] h-[45px] md:w-[70px] md:h-[70px] object-contain"
+              alt="Logo English For Real"
+              src="/logo.png"
+            />
+          </router-link>
         </div>
 
         <nav className="hidden md:flex items-center gap-6">

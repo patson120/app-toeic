@@ -9,10 +9,35 @@ const routes = [
     meta: { requiresAuth: false }
   },
   {
+    path: '/otp',
+    name: 'Otp',
+    component: () => import('../views/OTPInput.vue'),
+    meta: { requiresAuth: false }
+  },
+  {
+    path: '/profile-completion',
+    name: 'Profile-Completion',
+    component: () => import('../views/ProfileCompletion.vue'),
+    meta: { requiresAuth: false }
+  },
+  {
+    path: '/company-completion',
+    name: 'Company-Completion',
+    component: () => import('../views/CompanyCompletion.vue'),
+    meta: { requiresAuth: false }
+  },
+  {
     path: '/register',
     name: 'Register',
     component: () => import('../views/Register.vue'),
     meta: { requiresAuth: false }
+  },
+ 
+  {
+    path: '/onboarding',
+    name: 'Onboarding',
+    component: () => import('../views/Onboarding.vue'),
+    meta: { requiresAuth: true }
   },
   {
     path: '/',
@@ -21,9 +46,9 @@ const routes = [
     meta: { requiresAuth: true }
   },
   {
-    path: '/onboarding',
-    name: 'Onboarding',
-    component: () => import('../views/Onboarding.vue'),
+    path: '/dashboard',
+    name: 'Dashboard',
+    component: () => import('../views/Dashboard.vue'),
     meta: { requiresAuth: true }
   },
   {

@@ -18,7 +18,7 @@
           @click="closeAlert"
           aria-label="Fermer"
         >
-          <i class="fas fa-times"></i>
+          <Plus class="w-5 h-5 rotate-45" />
         </button>
       </div>
     </Transition>
@@ -26,6 +26,7 @@
   
   <script setup lang="ts">
   import { computed } from 'vue';
+  import { Plus } from "lucide-vue-next";
   
   interface Props {
     modelValue?: boolean;
@@ -188,7 +189,7 @@
   }
   
   .alert-filled .alert-close:hover {
-    background: rgba(255, 255, 255, 0.2);
+    background: rgba(160, 24, 24, 0.8);
   }
   
   /* Transitions */
