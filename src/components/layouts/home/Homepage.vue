@@ -31,12 +31,13 @@
         <div class="max-width bg-transparent">
             <div class="w-full flex flex-row gap-10">
                 <SideMenuSection />
-                <div class="space-y-10 w-full">
-                    <div class="h-96 bg-white rounded-2xl mb-10"></div>
+                <div class="w-full">
+                    <MainSection />
+                    <!-- <div class="h-96 bg-white rounded-2xl mb-10"></div>
                     <div class="grid grid-cols-2 gap-10">
                       <div class="h-72 bg-white rounded-2xl"></div>
                       <div class="h-72 bg-white rounded-2xl"></div>
-                    </div>
+                    </div> -->
                 </div>
             </div>
         </div>
@@ -46,39 +47,7 @@
 <script setup lang="ts">
 import { Menu, User } from 'lucide-vue-next';
 import SideMenuSection from './SideMenuSection.vue';
+import MainSection from './MainSection.vue';
 
-
-/* const statsData = [
-  {
-    title: "Career Readiness",
-    value: "78%",
-    change: "+12%",
-    icon: "/lawyer.png",
-    bgColor: "bg-[#1a4fcf54]",
-  },
-  {
-    title: "TOEIC Progress",
-    value: "720",
-    change: "+60%",
-    icon: "/sun.png",
-    bgColor: "bg-[#ff551c42]",
-  },
-];
-
-const quickActionsData = [
-  {
-    title: "Test blanc TOEIC",
-    description: "Simulation complète en conditions réelles",
-  },
-  {
-    title: "Speaking drill",
-    description: "Entraînement oral express (10 min)",
-  },
-  {
-    title: "Générer un pitch",
-    description: "Créer votre présentation personnelle",
-  },
-];
- */
 
 </script>

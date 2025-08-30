@@ -1,29 +1,44 @@
 <template>
-  <div className="h-[80vh] w-[290px] px-10 pt-10 bg-white rounded-2xl relative ">
+  <div className="h-[80vh] w-[290px] px-10 pt-10 bg-white rounded-2xl relative text-black ">
     <div className="flex flex-col items-start gap-10 ">
       <div className="flex flex-col items-start gap-4 relative flex-[0_0_auto]">
-        <div className="relative w-fit mt-[-1.00px] text-gris text-xs whitespace-nowrap">
-        <h3>Principal</h3>
+        <div className="relative w-fit mt-[-1.00px]  text-xs whitespace-nowrap">
+          <h3>Principal</h3>
         </div>
 
         <div className="flex flex-col items-start gap-4 relative flex-[0_0_auto]">
-            <div v-for="(item, index) in principalMenuItems" :key="index"
-                className="flex items-center gap-4 relative flex-[0_0_auto] cursor-pointer">
-                <img
-                    className="relative w-3.5 h-3.5"
-                    :alt="item.label"
-                    :src="item.icon"
-                />
-                <div class="relative w-fit whitespace-nowrap"
-                    :class="{ 'text-[#ff551c]': item.isActive, 'text-black': !item.isActive}">
-                    {{item.label}}
-                </div>
-            </div>
+          <div className="flex items-center gap-4 relative flex-[0_0_auto] cursor-pointer">
+            <Home class="h-4 w-4 text-orange"/>
+            <h4 class="relative w-fit text-orange whitespace-nowrap">
+                Accueil
+            </h4>
+          </div>
+
+          <div className="flex items-center gap-4 relative flex-[0_0_auto] cursor-pointer">
+            <Building class="h-4 w-4 text-gray-400"/>
+            <h4 class="relative w-fit whitespace-nowrap">
+                TOEIC Training
+            </h4>
+          </div>
+
+          <div className="flex items-center gap-4 relative flex-[0_0_auto] cursor-pointer">
+            <Mail class="h-4 w-4 text-gray-400"/>
+            <h4 class="relative w-fit whitespace-nowrap">
+                Messages
+            </h4>
+          </div>
+
+          <div className="flex items-center gap-4 relative flex-[0_0_auto] cursor-pointer">
+            <ShoppingBag class="h-4 w-4 text-gray-400"/>
+            <h4 class="relative w-fit whitespace-nowrap">
+                Carreer Boost RH.
+            </h4>
+          </div>
         </div>
     </div>
 
     <div className="flex flex-col items-start gap-4 relative flex-[0_0_auto]">
-        <div className="relative w-fit mt-[-1.00px] text-gris text-xs whitespace-nowrap">
+        <div className="relative w-fit mt-[-1.00px]  text-xs whitespace-nowrap">
         <h3>Mon activité</h3>
         </div>
 
@@ -43,7 +58,7 @@
     </div>
 
     <div className=" flex flex-col items-start gap-4 flex-[0_0_auto]">
-        <div className="w-fit mt-[-1.00px] font-normal text-gris text-xs whitespace-nowrap">
+        <div className="w-fit mt-[-1.00px] font-normal   text-xs whitespace-nowrap">
           <h3>Paramètres</h3>
         </div>
 
@@ -84,29 +99,7 @@
 </template>
 
 <script setup lang="ts">
-
-const principalMenuItems = [
-    {
-      icon: "/logo.png",
-      label: "Accueil",
-      isActive: true,
-    },
-    {
-      icon: "/logo.png",
-      label: "TOEIC Training",
-      isActive: false,
-    },
-    {
-      icon: "/logo.png",
-      label: "Messages",
-      isActive: false,
-    },
-    {
-      icon: "/logo.png",
-      label: "Career Boost RH.",
-      isActive: false,
-    },
-  ];
+import { Building, Home, Mail, ShoppingBag } from 'lucide-vue-next';
 
   const activityMenuItems = [
     {
