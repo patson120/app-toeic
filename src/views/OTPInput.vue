@@ -249,7 +249,7 @@ const handleSubmit = async () => {
           otpInputRefs.value[0]?.focus()
         })
         // Redirect to home or another page
-        router.push('/company-completion');
+        router.push('/profile-completion');
       }, 4000)
     } else {
       otpError.value = 'Code OTP invalide. Essayez 1234 pour tester.'

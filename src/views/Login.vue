@@ -288,7 +288,7 @@ const handleLogin = async () => {
     setTimeout(() => {
       showSuccessAlert.value = false;
       resetForm()
-      router.push('/onboarding')
+      router.push('/otp')
     }, 3000);
   } else {
     // error.value = result.error || 'Erreur de connexion'
