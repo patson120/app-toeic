@@ -31,7 +31,9 @@
         <div class="max-width bg-transparent">
             <div class="w-full flex flex-row gap-10">
                 <SideMenuSection />
-                <MainSection />
+                <div class="max-h-[80vh] overflow-y-scroll [&::-webkit-scrollbar]:w-0  w-full">
+                    <slot></slot>
+                </div>
             </div>
         </div>
     </div>

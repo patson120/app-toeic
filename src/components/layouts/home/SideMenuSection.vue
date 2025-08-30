@@ -1,5 +1,5 @@
 <template>
-  <div className="h-[80vh] w-[250px] px-10 pt-10 bg-white rounded-2xl relative text-black overflow-x-hidden overflow-y-scroll [&::-webkit-scrollbar]:w-0 ">
+  <div className="h-[80vh] shrink-0 w-[250px] px-10 pt-10 bg-white rounded-2xl relative text-black overflow-x-hidden overflow-y-scroll [&::-webkit-scrollbar]:w-0 ">
     <div className="flex flex-col items-start gap-10 ">
       <div className="flex flex-col items-start gap-4 relative flex-[0_0_auto]">
         <div className="relative w-fit mt-[-1.00px]  text-xs whitespace-nowrap">
@@ -9,9 +9,9 @@
         <div className="flex flex-col items-start gap-4 relative flex-[0_0_auto]">
           <div className="flex items-center gap-4 relative flex-[0_0_auto] cursor-pointer">
             <Home class="h-4 w-4 text-orange"/>
-            <h4 class="relative w-fit text-orange whitespace-nowrap">
+            <router-link to="/dashboard" class="relative w-fit text-orange whitespace-nowrap">
                 Accueil
-            </h4>
+            </router-link>
           </div>
 
           <div className="flex items-center gap-4 relative flex-[0_0_auto] cursor-pointer">
@@ -30,9 +30,9 @@
 
           <div className="flex items-center gap-4 relative flex-[0_0_auto] cursor-pointer">
             <ShoppingBag class="h-4 w-4 text-gray-400"/>
-            <h4 class="relative w-fit whitespace-nowrap">
+            <router-link to="/career-boost" class="relative w-fit whitespace-nowrap">
                 Carreer Boost RH.
-            </h4>
+            </router-link>
           </div>
         </div>
     </div>

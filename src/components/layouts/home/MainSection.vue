@@ -1,5 +1,5 @@
 <template>
-  <main className="flex-1 max-h-[80vh] overflow-y-scroll [&::-webkit-scrollbar]:w-0  w-full space-y-6">
+  <main className="flex-1 w-full space-y-6">
     <div class="grid grid-cols-12 p-8 gap-5 bg-white rounded-2xl">
       <div className="col-span-8">
         <div class="flex items-center mb-2 gap-4">

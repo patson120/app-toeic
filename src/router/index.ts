@@ -52,6 +52,12 @@ const routes = [
     meta: { requiresAuth: true }
   },
   {
+    path: '/career-boost',
+    name: 'CareerBoost',
+    component: () => import('../views/CarrerBoost.vue'),
+    meta: { requiresAuth: true }
+  },
+  {
     path: '/results',
     name: 'results',
     component: () => import('../views/ResultsView.vue'),
