@@ -33,7 +33,10 @@
                 <SideMenuSection />
                 <div class="space-y-10 w-full">
                     <div class="h-96 bg-white rounded-2xl mb-10"></div>
-                    <div class="h-96 bg-white rounded-2xl"></div>
+                    <div class="grid grid-cols-2 gap-10">
+                      <div class="h-72 bg-white rounded-2xl"></div>
+                      <div class="h-72 bg-white rounded-2xl"></div>
+                    </div>
                 </div>
             </div>
         </div>
