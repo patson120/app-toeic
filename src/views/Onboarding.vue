@@ -130,13 +130,13 @@
       onboardingStore.nextStep()
     }
     else {
-      router.push("/")
+      router.push("/dashboard")
     }
   }
 
   const skipOnboarding = ()  => {
     onboardingStore.completeOnboarding()
-    router.push('/')
+    router.push('/dashboard')
   }
 
 
