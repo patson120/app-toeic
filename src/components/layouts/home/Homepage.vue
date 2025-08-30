@@ -1,5 +1,5 @@
 <template>
-    <div class="min-h-screen w-screen bg-[#F8F8F8] space-y-10">
+    <div class="min-h-screen w-screen bg-[#F8F8F8] space-y-10 overflow-hidden">
         <header className="fixed top-0 w-full py-2 bg-white">
             <div className="flex items-center justify-between max-width">
                 <div className="flex items-center shrink-0">
@@ -31,14 +31,7 @@
         <div class="max-width bg-transparent">
             <div class="w-full flex flex-row gap-10">
                 <SideMenuSection />
-                <div class="w-full">
-                    <MainSection />
-                    <!-- <div class="h-96 bg-white rounded-2xl mb-10"></div>
-                    <div class="grid grid-cols-2 gap-10">
-                      <div class="h-72 bg-white rounded-2xl"></div>
-                      <div class="h-72 bg-white rounded-2xl"></div>
-                    </div> -->
-                </div>
+                <MainSection />
             </div>
         </div>
     </div>

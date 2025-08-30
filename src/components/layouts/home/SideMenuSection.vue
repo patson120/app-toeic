@@ -1,5 +1,5 @@
 <template>
-  <div className="h-[80vh] w-[290px] px-10 pt-10 bg-white rounded-2xl relative text-black ">
+  <div className="h-[80vh] w-[250px] px-10 pt-10 bg-white rounded-2xl relative text-black overflow-x-hidden overflow-y-scroll [&::-webkit-scrollbar]:w-0 ">
     <div className="flex flex-col items-start gap-10 ">
       <div className="flex flex-col items-start gap-4 relative flex-[0_0_auto]">
         <div className="relative w-fit mt-[-1.00px]  text-xs whitespace-nowrap">
@@ -117,7 +117,7 @@ import { Building, Home, Mail, ShoppingBag } from 'lucide-vue-next';
     {
       icon: "/logo.png",
       label: "Statistiques",
-    },
+    }
   ];
 
   const settingsMenuItems = [

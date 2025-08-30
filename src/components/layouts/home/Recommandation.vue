@@ -10,9 +10,8 @@
         <span v-if="props.priority" className="absolute top-[17px] right-[18px] font-semibold text-[#454545] text-xs whitespace-nowrap">
           {{ props.priority }}
         </span>
-        <button
-          variant="ghost"
-          className="flex gap-2 h-auto mt-2 font-semibold text-[#454545] text-xs whitespace-nowrap hover:bg-transparent">
+        <button variant="ghost"
+          className="flex w-fit gap-2 h-auto mt-2 font-semibold text-[#454545] text-xs whitespace-nowrap hover:bg-transparent">
           <p>{{ props.btnText}} </p>
           <ArrowRight class="h-4 w-4 text-gray-500"/>
         </button>
