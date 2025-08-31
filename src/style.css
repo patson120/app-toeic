@@ -32,6 +32,10 @@ html.dark {
     @apply !w-[94%] md:!w-[80%] mx-auto;
   }
 
+  .dashboard-max-width {
+    @apply !w-[94%] md:!w-[90%] mx-auto;
+  }
+
 
 }
 

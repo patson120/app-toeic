@@ -1,7 +1,7 @@
 <template>
     <div class="min-h-screen w-screen bg-[#F8F8F8] space-y-10 overflow-hidden">
         <header className="fixed top-0 w-full py-2 bg-white">
-            <div className="flex items-center justify-between max-width">
+            <div className="flex items-center justify-between dashboard-max-width">
                 <div className="flex items-center shrink-0">
                     <router-link to="/">
                         <img
@@ -28,7 +28,7 @@
         </header>
         <div class="h-[50px]"></div>
 
-        <div class="max-width bg-transparent">
+        <div class="dashboard-max-width bg-transparent">
             <div class="w-full flex flex-row gap-10">
                 <SideMenuSection />
                 <div class="max-h-[80vh] overflow-y-scroll [&::-webkit-scrollbar]:w-0  w-full">
@@ -42,7 +42,5 @@
 <script setup lang="ts">
 import { Menu, User } from 'lucide-vue-next';
 import SideMenuSection from './SideMenuSection.vue';
-import MainSection from './MainSection.vue';
-
 
 </script>
