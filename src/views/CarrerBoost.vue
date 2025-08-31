@@ -1,7 +1,7 @@
 <template>
     <div class="overflow-x-hidden text-black">
         <MainLayout>
-            <div class="bg-white w-full h-full rounded-2xl p-8">
+            <div class="bg-white w-full rounded-2xl p-8">
                 <div>
                     <h1 class="font-semibold text-2xl text-gray-700">Career Boost RH</h1>
                     <p class="text-gray-500">Préparez-vous aux entretiens et boostez votre carrière internationale</p>
@@ -74,14 +74,122 @@
                         </div>
                     </div>
                 </div>
+
+                <div class="h-full p-5 border border-gray-300 rounded-lg space-y-5">
+                    <div class="space-y-2">
+                        <h2 class="font-medium text-gray-700 text-2xl">Formations</h2>
+                        <form @keypress="handleKeyPress" @submit.prevent="handleSubmit" class="login-form">
+                            <BaseInput
+                                v-model="searchText"
+                                type="text"
+                                placeholder="Rechercher..."
+                                clearable
+                                class="w-fit"
+                            />
+                        </form>
+                    </div>
+
+                    <div class="space-y-4">
+                        <div class="flex justify-between gap-10 items-center">
+                            <div class="flex gap-5 ">
+                                <div class="w-36 h-28">
+                                    <img class="w-full h-full" src="/assets/img/image-2.png" alt=""/>
+                                </div>
+                                <div class="space-y-2">
+                                    <h1 class="text-gray-600 font-semibold text-lg">Réalisez un bilan de compétences pour un bénéficiaire</h1>
+                                    <p class="text-gray-600">Réalisez le bilan de compétences d'un bénéficiaire, en analysant précisément son expérience passée, ses compétences et motivations.</p>
+                                    <div class="flex gap-3">
+                                        <div class="flex gap-2 justify-center items-center">
+                                            <ListCheck class="w-6 h-6 text-gray-700" />
+                                            <p class="text-gray-700">Facile</p>
+                                        </div>
+                                        <div class="flex gap-2 justify-center items-center">
+                                            <Timer class="w-6 h-6 text-gray-700" />
+                                            <p class="text-gray-700">8 heures</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <BaseButton
+                                type="button"
+                                variant="outline"
+                                size="md"
+                                @click="handleSelect"
+                                class="h-fit w-fit !border !border-orange text-black">
+                                Commencer
+                            </BaseButton>
+                        </div>
+                        <div class="flex justify-between gap-10 items-center">
+                            <div class="flex gap-5 ">
+                                <div class="w-36 h-28">
+                                    <img class="w-full h-full" src="/assets/img/groupe-2.png" alt=""/>
+                                </div>
+                                <div class="space-y-2">
+                                    <h1 class="text-gray-600 font-semibold text-lg">Réalisez un bilan de compétences pour un bénéficiaire</h1>
+                                    <p class="text-gray-600">Réalisez le bilan de compétences d'un bénéficiaire, en analysant précisément son expérience passée, ses compétences et motivations.</p>
+                                    <div class="flex gap-3">
+                                        <div class="flex gap-2 justify-center items-center">
+                                            <ListCheck class="w-6 h-6 text-gray-700" />
+                                            <p class="text-gray-700">Facile</p>
+                                        </div>
+                                        <div class="flex gap-2 justify-center items-center">
+                                            <Timer class="w-6 h-6 text-gray-700" />
+                                            <p class="text-gray-700">8 heures</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <BaseButton
+                                type="button"
+                                variant="outline"
+                                size="md"
+                                @click="handleSelect"
+                                class="h-fit w-fit !border !border-orange text-black">
+                                Commencer
+                            </BaseButton>
+                        </div>
+                        <div class="flex justify-between gap-10 items-center">
+                            <div class="flex gap-5 ">
+                                <div class="w-36 h-28">
+                                    <img class="w-full h-full" src="/assets/img/image-2.png" alt=""/>
+                                </div>
+                                <div class="space-y-2">
+                                    <h1 class="text-gray-600 font-semibold text-lg">Réalisez un bilan de compétences pour un bénéficiaire</h1>
+                                    <p class="text-gray-600">Réalisez le bilan de compétences d'un bénéficiaire, en analysant précisément son expérience passée, ses compétences et motivations.</p>
+                                    <div class="flex gap-3">
+                                        <div class="flex gap-2 justify-center items-center">
+                                            <ListCheck class="w-6 h-6 text-gray-700" />
+                                            <p class="text-gray-700">Facile</p>
+                                        </div>
+                                        <div class="flex gap-2 justify-center items-center">
+                                            <Timer class="w-6 h-6 text-gray-700" />
+                                            <p class="text-gray-700">8 heures</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <BaseButton
+                                type="button"
+                                variant="outline"
+                                size="md"
+                                @click="handleSelect"
+                                class="h-fit w-fit !border !border-orange text-black">
+                                Commencer
+                            </BaseButton>
+                        </div>
+                    </div>
+                </div>
             </div>
         </MainLayout>
     </div>
 </template>
 
 <script setup lang="ts">
-import { ChevronRight, FileVideo, Stars, UserStar, VideoIcon } from 'lucide-vue-next';
+import { ChevronRight, ListCheck, Stars, Timer, UserStar, VideoIcon } from 'lucide-vue-next';
+import { ref } from 'vue';
 import MainLayout from '../components/layouts/home/MainLayout.vue';
+import BaseButton from '../components/ui/BaseButton.vue';
+import BaseInput from '../components/ui/BaseInput.vue';
 
 const recommandationData = [
   {
@@ -112,5 +220,24 @@ const recentsData = [
     description: "2 jours",
   },
 ];
+// ===== DATA ======
+const searchText = ref("")
+
+// ===== METHODS ======
+const handleSubmit = () => {
+  
+};
+const handleSelect = () => {
+    console.log("Handle click")
+}
+
+
+// ===== LIFECYCLE & EVENT HANDLERS =====
+
+const handleKeyPress = (event: KeyboardEvent) => {
+  if (event.key === 'Enter' && searchText) {
+    // Do something
+  }
+};
 
 </script>
