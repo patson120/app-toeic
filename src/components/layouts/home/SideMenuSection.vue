@@ -8,29 +8,33 @@
 
         <div className="flex flex-col items-start gap-4 relative flex-[0_0_auto]">
           <div className="flex items-center gap-4 relative flex-[0_0_auto] cursor-pointer">
-            <Home class="h-4 w-4 text-orange"/>
-            <router-link to="/dashboard" class="relative w-fit text-orange whitespace-nowrap">
+            <Home class="h-4 w-4" :class="getNavLinkClass('/dashboard')"/>
+            <router-link to="/dashboard" 
+              class="relative w-fit whitespace-nowrap"
+              :class="getNavLinkClass('/dashboard')">
                 Accueil
             </router-link>
           </div>
 
           <div className="flex items-center gap-4 relative flex-[0_0_auto] cursor-pointer">
-            <Building class="h-4 w-4 text-gray-400"/>
+            <Building class="h-4 w-4" :class="getNavLinkClass('')"/>
             <h4 class="relative w-fit whitespace-nowrap">
                 TOEIC Training
             </h4>
           </div>
 
           <div className="flex items-center gap-4 relative flex-[0_0_auto] cursor-pointer">
-            <Mail class="h-4 w-4 text-gray-400"/>
+            <Mail class="h-4 w-4 " :class="getNavLinkClass('/')"/>
             <h4 class="relative w-fit whitespace-nowrap">
                 Messages
             </h4>
           </div>
 
           <div className="flex items-center gap-4 relative flex-[0_0_auto] cursor-pointer">
-            <ShoppingBag class="h-4 w-4 text-gray-400"/>
-            <router-link to="/career-boost" class="relative w-fit whitespace-nowrap">
+            <ShoppingBag class="h-4 w-4" :class="getNavLinkClass('/career-boost')"/>
+            <router-link to="/career-boost" 
+              class="relative w-fit whitespace-nowrap"
+              :class="getNavLinkClass('/career-boost')">
                 Carreer Boost RH.
             </router-link>
           </div>
@@ -100,6 +104,11 @@
 
 <script setup lang="ts">
 import { Building, Home, Mail, ShoppingBag } from 'lucide-vue-next';
+import { useRoute, useRouter } from 'vue-router';
+
+
+const router = useRouter()
+const route = useRoute()
 
   const activityMenuItems = [
     {
@@ -134,6 +143,21 @@ import { Building, Home, Mail, ShoppingBag } from 'lucide-vue-next';
       label: "Compte",
     },
   ];
+ 
 
+  //  =========== Methods =============
+  const isActiveRoute = (path: string) => {
+  return route.path === path
+}
+
+const getNavLinkClass = (path: string) => {
+  const isActive = isActiveRoute(path)
+  
+  if (isActive) {
+    return 'text-orange'
+  }
+  
+  return 'text-gray-900'
+}
 
 </script>
