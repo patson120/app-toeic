@@ -7,37 +7,36 @@
         </div>
 
         <div className="flex flex-col items-start gap-4 relative flex-[0_0_auto]">
-          <div className="flex items-center gap-4 relative flex-[0_0_auto] cursor-pointer">
+          <router-link to="/dashboard" className="flex items-center gap-4 relative flex-[0_0_auto] cursor-pointer">
             <Home class="h-4 w-4" :class="getNavLinkClass('/dashboard')"/>
-            <router-link to="/dashboard" 
-              class="relative w-fit whitespace-nowrap"
-              :class="getNavLinkClass('/dashboard')">
-                Accueil
-            </router-link>
-          </div>
+            <h4 class="relative w-fit whitespace-nowrap" :class="getNavLinkClass('/dashboard')">
+              Accueil
+            </h4>
+          </router-link>
 
-          <div className="flex items-center gap-4 relative flex-[0_0_auto] cursor-pointer">
-            <Building class="h-4 w-4" :class="getNavLinkClass('')"/>
-            <h4 class="relative w-fit whitespace-nowrap">
+          <router-link to="/training" className="flex items-center gap-4 relative flex-[0_0_auto] cursor-pointer">
+            <Building class="h-4 w-4" :class="getNavLinkClass('/training')"/>
+            <h4 class="relative w-fit whitespace-nowrap" 
+            :class="getNavLinkClass('/training')">
                 TOEIC Training
             </h4>
-          </div>
+          </router-link>
 
-          <div className="flex items-center gap-4 relative flex-[0_0_auto] cursor-pointer">
-            <Mail class="h-4 w-4 " :class="getNavLinkClass('/')"/>
-            <h4 class="relative w-fit whitespace-nowrap">
+          <router-link to="#" className="flex items-center gap-4 relative flex-[0_0_auto] cursor-pointer">
+            <Mail class="h-4 w-4 " :class="getNavLinkClass('/messages')"/>
+            <h4 class="relative w-fit whitespace-nowrap" :class="getNavLinkClass('/messages')">
                 Messages
             </h4>
-          </div>
+          </router-link>
 
-          <div className="flex items-center gap-4 relative flex-[0_0_auto] cursor-pointer">
+          <router-link to="/career-boost" className="flex items-center gap-4 relative flex-[0_0_auto] cursor-pointer">
             <ShoppingBag class="h-4 w-4" :class="getNavLinkClass('/career-boost')"/>
-            <router-link to="/career-boost" 
+            <h4 
               class="relative w-fit whitespace-nowrap"
               :class="getNavLinkClass('/career-boost')">
                 Carreer Boost RH.
-            </router-link>
-          </div>
+            </h4>
+          </router-link>
         </div>
     </div>
 

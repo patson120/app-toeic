@@ -9,7 +9,7 @@
                 <div class="grid grid-cols-3 gap-3">
                     <div class="flex justify-center items-center">
                         <div class="flex space-x-3">
-                        <div class="space-y-3 border border-orange/75 rounded-md p-3">
+                        <div class="space-y-3 border border-orange/75 rounded-md p-3 min-w-[150px]">
                             <div class="flex justify-between items-start">
                                 <Stars class="w-6 h-6 text-orange" />
                                 <p class="text-xs text-gray-500">+12%</p>
@@ -17,7 +17,7 @@
                             <h1 class="text-xl text-orange font-bold text-center">78%</h1>
                             <p class="text-xs text-gray-500">Career Readiness</p>
                         </div>
-                        <div class="space-y-3 border border-blue-400 rounded-md p-3">
+                        <div class="space-y-3 border border-blue-400 rounded-md p-3 min-w-[150px]">
                             <div class="flex justify-between items-start">
                                 <UserStar class="w-6 h-6 text-blue-600" />
                                 <p class="text-xs text-gray-500">+0.3%</p>
@@ -25,7 +25,7 @@
                             <h1 class="text-xl text-blue-600 font-bold text-center">4.2/5</h1>
                             <p class="text-xs text-gray-500">Avg. Interview Score</p>
                         </div>
-                        <div class="space-y-3 border border-green-400 rounded-md p-3">
+                        <div class="space-y-3 border border-green-400 rounded-md p-3 min-w-[150px]">
                             <div class="flex justify-between items-start">
                                 <VideoIcon class="w-6 h-6 text-green-600" />
                                 <p class="text-xs text-gray-500">+12%</p>
