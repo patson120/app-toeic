@@ -56,10 +56,10 @@
                     </div>
                 </div>
 
-                <div class="h-full p-5 p-b-10 border border-gray-300 rounded-lg space-y-5">
+                <div class="h-full p-5 border border-gray-300 rounded-lg space-y-5">
                     <h1 class="text-lg text-gray-900 font-bold">TOEIC</h1>
                     <div class="grid grid-cols-12 gap-8">
-                        <div class="col-span-3 flex flex-col gap-3 h-96 border-r-2 border-r-gray-200 pr-5">
+                        <div class="col-span-3 flex flex-col gap-3 border-r-2 border-r-gray-200 pr-5">
                             <div class="w-full flex justify-start items-center space-x-3 border border-gray-200 p-2 rounded-md">
                                 <Book class="h-6 w-6 text-orange"/>
                                 <span class="text-lg text-orange font-semibold">Listening</span>
@@ -69,19 +69,19 @@
                                 <span class="text-lg text-gray-900 font-semibold">Reading</span>
                             </div>
                             <div class="w-full flex justify-start items-center space-x-3 border border-gray-200 p-2 rounded-md">
-                                <BookOpen class="h-6 w-6"/>
+                                <Mic class="h-6 w-6"/>
                                 <span class="text-lg text-gray-900 font-semibold">Speaking</span>
                             </div>
                             <div class="w-full flex justify-start items-center space-x-3 border border-gray-200 p-2 rounded-md">
-                                <BookOpen class="h-6 w-6"/>
+                                <TextCursor class="h-6 w-6"/>
                                 <span class="text-lg text-gray-900 font-semibold">Grammar</span>
                             </div>
                             <div class="w-full flex justify-start items-center space-x-3 border border-gray-200 p-2 rounded-md">
-                                <BookOpen class="h-6 w-6"/>
+                                <Brain class="h-6 w-6"/>
                                 <span class="text-lg text-gray-900 font-semibold">Vocabulary</span>
                             </div>
                             <div class="w-full flex justify-start items-center space-x-3 border border-gray-200 p-2 rounded-md">
-                                <BookOpen class="h-6 w-6"/>
+                                <BookText class="h-6 w-6"/>
                                 <span class="text-lg text-gray-900 font-semibold">Tests Blancs</span>
                             </div>
                             <div class="w-full flex justify-start items-center space-x-3 border border-gray-200 p-2 rounded-md">
@@ -118,7 +118,7 @@
                                 <div class="border border-gray-200 space-y-4 p-3 rounded-md">
                                     <div class="flex justify-between space-y-4">
                                         <div class="">
-                                            <h2>Part 1</h2>
+                                            <h2>Part 2</h2>
                                             <p class="text-sm text-gray-400">Photographie</p>
                                         </div>
                                         <Image class="h-5 w-5" />
@@ -141,7 +141,7 @@
                                 <div class="border border-gray-200 space-y-4 p-3 rounded-md">
                                     <div class="flex justify-between space-y-4">
                                         <div class="">
-                                            <h2>Part 1</h2>
+                                            <h2>Part 3</h2>
                                             <p class="text-sm text-gray-400">Photographie</p>
                                         </div>
                                         <Image class="h-5 w-5" />
@@ -164,7 +164,7 @@
                                 <div class="border border-gray-200 space-y-4 p-3 rounded-md">
                                     <div class="flex justify-between space-y-4">
                                         <div class="">
-                                            <h2>Part 1</h2>
+                                            <h2>Part 4</h2>
                                             <p class="text-sm text-gray-400">Photographie</p>
                                         </div>
                                         <Image class="h-5 w-5" />
@@ -194,7 +194,7 @@
 </template>
 
 <script setup lang="ts">
-import { Book, BookOpen, ChevronRight, CircleCheck, Image, PinIcon, Timer } from 'lucide-vue-next';
+import { Book, BookOpen, BookText, Brain, ChevronRight, CircleCheck, Image, Mic, PinIcon, Text, TextCursor, Timer } from 'lucide-vue-next';
 import MainLayout from '../components/layouts/home/MainLayout.vue';
 
 const recommandationData = [
