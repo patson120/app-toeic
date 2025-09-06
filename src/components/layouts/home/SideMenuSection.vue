@@ -46,17 +46,31 @@
         </div>
 
         <div className="flex flex-col items-start gap-4 relative flex-[0_0_auto]">
-            <div v-for="(item, index) in activityMenuItems" :key="index"
-                className="flex items-center gap-4 relative flex-[0_0_auto] cursor-pointer">
-                <img
-                    className="relative w-3.5 h-3.5"
-                    :alt="item.label"
-                    :src="item.icon"
-                />
-                <div className="relative w-fit font-normal text-noir text-base whitespace-nowrap">
-                    {{ item.label }}
-                </div>
-            </div>
+          <router-link to="#" className="flex items-center gap-4 relative flex-[0_0_auto] cursor-pointer">
+            <Receipt class="h-4 w-4 " :class="getNavLinkClass('#')"/>
+            <h4 class="relative w-fit whitespace-nowrap" :class="getNavLinkClass('#')">
+              Tests blanc
+            </h4>
+          </router-link>
+          <router-link to="#" className="flex items-center gap-4 relative flex-[0_0_auto] cursor-pointer">
+            <LayoutDashboard class="h-4 w-4 " :class="getNavLinkClass('#')"/>
+            <h4 class="relative w-fit whitespace-nowrap" :class="getNavLinkClass('#')">
+              Favoris
+            </h4>
+          </router-link>
+          <router-link to="#" className="flex items-center gap-4 relative flex-[0_0_auto] cursor-pointer">
+            <ScrollText class="h-4 w-4 " :class="getNavLinkClass('#')"/>
+            <h4 class="relative w-fit whitespace-nowrap" :class="getNavLinkClass('#')">
+              Historique
+            </h4>
+          </router-link>
+          <router-link to="#" className="flex items-center gap-4 relative flex-[0_0_auto] cursor-pointer">
+            <ChartLine class="h-4 w-4 " :class="getNavLinkClass('#')"/>
+            <h4 class="relative w-fit whitespace-nowrap" :class="getNavLinkClass('#')">
+              Statistiques
+            </h4>
+          </router-link>
+    
         </div>
     </div>
 
@@ -66,18 +80,24 @@
         </div>
 
         <div className="flex flex-col items-start gap-4 flex-[0_0_auto]">
-
-            <div v-for="(item, index) in settingsMenuItems" :key="index"
-                className="flex items-center gap-4 flex-[0_0_auto] cursor-pointer">
-                <img
-                    className="w-3.5 h-3.5"
-                    :alt="item.label"
-                    :src="item.icon"
-                />
-                <div className="w-fit font-normal text-noir text-base whitespace-nowrap">
-                    {{item.label}}
-                </div>
-            </div>
+          <router-link to="#" className="flex items-center gap-4 relative flex-[0_0_auto] cursor-pointer">
+            <Library class="h-4 w-4 " :class="getNavLinkClass('#')"/>
+            <h4 class="relative w-fit whitespace-nowrap" :class="getNavLinkClass('#')">
+              Préférence
+            </h4>
+          </router-link>
+          <router-link to="#" className="flex items-center gap-4 relative flex-[0_0_auto] cursor-pointer">
+            <CircleDollarSign class="h-4 w-4 " :class="getNavLinkClass('#')"/>
+            <h4 class="relative w-fit whitespace-nowrap" :class="getNavLinkClass('#')">
+              Abonnement
+            </h4>
+          </router-link>
+          <router-link to="#" className="flex items-center gap-4 relative flex-[0_0_auto] cursor-pointer">
+            <Settings2 class="h-4 w-4 " :class="getNavLinkClass('#')"/>
+            <h4 class="relative w-fit whitespace-nowrap" :class="getNavLinkClass('#')">
+              Compte
+            </h4>
+          </router-link>
         </div>
     </div>
     </div>
@@ -102,51 +122,16 @@
 </template>
 
 <script setup lang="ts">
-import { Building, Home, Mail, ShoppingBag } from 'lucide-vue-next';
-import { useRoute, useRouter } from 'vue-router';
+import { Building, ChartLine, CircleDollarSign, Home, LayoutDashboard, Library, Mail, Receipt, ScrollText, Settings2, ShoppingBag } from 'lucide-vue-next';
+import { useRoute } from 'vue-router';
 
 
-const router = useRouter()
 const route = useRoute()
-
-  const activityMenuItems = [
-    {
-      icon: "/logo.png",
-      label: "Tests blanc",
-    },
-    {
-      icon: "/logo.png",
-      label: "Favoris",
-    },
-    {
-      icon: "/logo.png",
-      label: "Historique",
-    },
-    {
-      icon: "/logo.png",
-      label: "Statistiques",
-    }
-  ];
-
-  const settingsMenuItems = [
-    {
-      icon: "/logo.png",
-      label: "Préférence",
-    },
-    {
-      icon: "/logo.png",
-      label: "Abonnement",
-    },
-    {
-      icon: "/logo.png",
-      label: "Compte",
-    },
-  ];
  
 
   //  =========== Methods =============
   const isActiveRoute = (path: string) => {
-  return route.path === path
+  return route.path === path || route.path.includes(path)
 }
 
 const getNavLinkClass = (path: string) => {
