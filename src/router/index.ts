@@ -65,7 +65,7 @@ const routes = [
   },
   {
     path: '/training/:trainingId',
-    name: 'Training',
+    name: 'TrainingDetails',
     component: () => import('../views/TrainingDetails.vue'),
     meta: { requiresAuth: true }
   },
