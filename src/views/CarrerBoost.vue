@@ -190,6 +190,9 @@ import { ref } from 'vue';
 import MainLayout from '../components/layouts/home/MainLayout.vue';
 import BaseButton from '../components/ui/BaseButton.vue';
 import BaseInput from '../components/ui/BaseInput.vue';
+import { useRouter } from 'vue-router';
+
+const router = useRouter()
 
 const recommandationData = [
   {
@@ -220,6 +223,8 @@ const recentsData = [
     description: "2 jours",
   },
 ];
+
+
 // ===== DATA ======
 const searchText = ref("")
 
@@ -228,7 +233,7 @@ const handleSubmit = () => {
   
 };
 const handleSelect = () => {
-    console.log("Handle click")
+    router.push("/training/formation toeic")
 }
 
 
