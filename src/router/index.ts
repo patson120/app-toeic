@@ -74,7 +74,13 @@ const routes = [
     name: 'results',
     component: () => import('../views/ResultsView.vue'),
     meta: { requiresAuth: true }
-  }
+  },
+  {
+    path: '/messages',
+    name: 'Messages',
+    component: () => import('../views/Messages.vue'),
+    meta: { requiresAuth: true }
+  },
 ]
 
 const router = createRouter({

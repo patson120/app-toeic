@@ -55,7 +55,7 @@ export const useAuthStore = defineStore('auth', () => {
   const register = async (name: string, email: string, password: string) => {
     isLoading.value = true
     try {
-      await new Promise(resolve => setTimeout(resolve, 1000))
+        
       
       // const userData = {
       //   id: Date.now().toString(),

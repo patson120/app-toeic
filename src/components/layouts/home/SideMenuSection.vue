@@ -22,8 +22,8 @@
             </h4>
           </router-link>
 
-          <router-link to="#" className="flex items-center gap-4 relative flex-[0_0_auto] cursor-pointer">
-            <Mail class="h-4 w-4 " :class="getNavLinkClass('/messages')"/>
+          <router-link to="/messages" className="flex items-center gap-4 relative flex-[0_0_auto] cursor-pointer">
+            <Mail class="h-4 w-4" :class="getNavLinkClass('/messages')"/>
             <h4 class="relative w-fit whitespace-nowrap" :class="getNavLinkClass('/messages')">
                 Messages
             </h4>
